@@ -25,7 +25,7 @@ export default function App() {
       <nav className="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-md border-b border-white/10">
         <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
           <a href="#" className="text-xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-            Adriel.dev
+            Engineer Adriel
           </a>
 
           {/* Desktop Nav */}
@@ -60,62 +60,102 @@ export default function App() {
       <main className="pt-24 pb-12 px-6 max-w-6xl mx-auto">
         
         {/* HERO SECTION */}
-        <section id="about" className="py-12 md:py-24 grid md:grid-cols-2 gap-12 items-center">
-          <div className="space-y-6">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-medium border border-primary/20">
-              <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
-              </span>
-              Senior Software Engineer based in Seoul
-            </div>
+        <section id="about" className="py-12 md:py-24">
+          <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
             
-            <h1 className="text-4xl md:text-6xl font-extrabold leading-tight tracking-tight">
-              Building <span className="text-primary">AI pipelines</span> & <br />
-              <span className="text-secondary">Cloud infrastructure</span>.
-            </h1>
-            
-            <p className="text-lg text-muted max-w-xl leading-relaxed">
-              I’m <strong>Adriel Niyodusaba</strong>. I build scalable full-stack systems and global cloud infrastructure, with a specialized focus on <strong>AI-powered solutions</strong>. I deliver reliability and impact across the entire stack—optimizing performance, cost, and developer velocity.
-            </p>
+            <div className="space-y-6">
+              <div className="inline-flex flex-wrap items-center gap-2 text-sm font-medium">
+                <div className="px-3 py-1 rounded-full bg-primary/10 text-primary border border-primary/20 flex items-center gap-2">
+                  <span className="relative flex h-2 w-2">
+                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+                    <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
+                  </span>
+                  Software Engineer
+                </div>
+                <div className="px-3 py-1 rounded-full bg-surface border border-white/10 text-muted">
+                  4 Years Experience
+                </div>
+                <div className="px-3 py-1 rounded-full bg-surface border border-white/10 text-muted">
+                  Based in Seoul
+                </div>
+                <div className="px-3 py-1 rounded-full bg-surface border border-white/10 text-muted">
+                  28 Years Old
+                </div>
+                <div className="px-3 py-1 rounded-full bg-surface border border-white/10 text-muted">
+                  Rwandan
+                </div>
+              </div>
+              
+              <h1 className="text-4xl md:text-6xl font-extrabold leading-tight tracking-tight">
+                Software Engineer building <span className="text-primary">AI-powered solutions</span>.
+              </h1>
+              
+              <p className="text-lg text-muted max-w-xl leading-relaxed">
+                I'm <strong>Adriel Niyodusaba</strong>, a 28-year-old Rwandan Software Engineer based in Seoul, South Korea. With <strong>4 years of professional experience</strong> building AI-powered solutions, I specialize in creating intelligent systems that solve real-world problems. I'm a great team player and leader, passionate about delivering reliable, impactful software that drives business value.
+              </p>
 
-            <div className="flex flex-wrap gap-4 pt-2">
-              <a href="/docs/Adriel%20Niyodusaba%20Resume.pdf" target="_blank" className="flex items-center gap-2 px-6 py-3 bg-primary hover:bg-primary/90 text-white rounded-lg font-semibold transition-all shadow-lg shadow-primary/25">
-                <Download size={18} />
-                Download Resume
-              </a>
-              <a href="https://www.linkedin.com/in/adriel-niyodusaba-993a01120/" target="_blank" className="flex items-center gap-2 px-6 py-3 bg-surface border border-white/10 hover:border-white/20 text-text rounded-lg font-medium transition-all">
-                <Linkedin size={18} />
-                LinkedIn
-              </a>
+              <div className="flex flex-wrap gap-4 pt-2">
+                <a href="/docs/Adriel%20Niyodusaba%20Resume.pdf" target="_blank" className="flex items-center gap-2 px-6 py-3 bg-primary hover:bg-primary/90 text-white rounded-lg font-semibold transition-all shadow-lg shadow-primary/25">
+                  <Download size={18} />
+                  Download Resume
+                </a>
+                <a href="https://www.linkedin.com/in/adriel-niyodusaba-993a01120/" target="_blank" className="flex items-center gap-2 px-6 py-3 bg-surface border border-white/10 hover:border-white/20 text-text rounded-lg font-medium transition-all">
+                  <Linkedin size={18} />
+                  LinkedIn
+                </a>
+              </div>
+            </div>
+
+            <div className="relative flex justify-center md:justify-end">
+              <div className="absolute -inset-4 bg-gradient-to-r from-primary/20 to-secondary/20 rounded-full blur-3xl opacity-30"></div>
+              <img 
+                src="/adriel2.png" 
+                alt="Adriel Niyodusaba" 
+                className="relative z-10 w-full max-w-xs h-auto object-cover rounded-3xl shadow-2xl ring-1 ring-white/10"
+              />
             </div>
           </div>
 
-          <div className="relative">
-            <div className="absolute -inset-1 bg-gradient-to-r from-primary to-secondary rounded-2xl blur opacity-20"></div>
-            <div className="relative bg-surface border border-white/10 p-6 md:p-8 rounded-2xl shadow-xl">
-              <h3 className="text-lg font-semibold mb-4 flex items-center gap-2">
-                <Terminal size={20} className="text-secondary" />
-                Key Highlights
-              </h3>
-              <ul className="space-y-4 text-muted text-sm md:text-base">
-                <li className="flex gap-3">
-                  <span className="text-secondary mt-1">✓</span>
-                  <span>Built RAG chatbot reducing costs by <strong>~90%</strong>.</span>
-                </li>
-                <li className="flex gap-3">
-                  <span className="text-secondary mt-1">✓</span>
-                  <span>Architected AWS/GCP infra reducing latency by <strong>&gt;50%</strong>.</span>
-                </li>
-                <li className="flex gap-3">
-                  <span className="text-secondary mt-1">✓</span>
-                  <span>Doubled deployment frequency via CI/CD & DORA metrics.</span>
-                </li>
-                <li className="flex gap-3">
-                  <span className="text-secondary mt-1">✓</span>
-                  <span>Built recurring payments system processing <strong>&gt;50%</strong> of revenue.</span>
-                </li>
-              </ul>
+          {/* Key Highlights */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="bg-surface/50 border border-white/5 p-6 rounded-2xl hover:border-primary/30 transition-colors">
+              <div className="flex items-center gap-3 mb-2">
+                <div className="p-2 bg-primary/10 rounded-lg text-primary">
+                  <Terminal size={20} />
+                </div>
+                <span className="font-bold text-xl">~90%</span>
+              </div>
+              <p className="text-sm text-muted">Cost reduction via RAG chatbot optimization.</p>
+            </div>
+
+            <div className="bg-surface/50 border border-white/5 p-6 rounded-2xl hover:border-primary/30 transition-colors">
+              <div className="flex items-center gap-3 mb-2">
+                 <div className="p-2 bg-secondary/10 rounded-lg text-secondary">
+                  <Globe size={20} />
+                </div>
+                <span className="font-bold text-xl">&gt;50%</span>
+              </div>
+              <p className="text-sm text-muted">Latency reduction in global AWS/GCP infra.</p>
+            </div>
+
+            <div className="bg-surface/50 border border-white/5 p-6 rounded-2xl hover:border-primary/30 transition-colors">
+              <div className="flex items-center gap-3 mb-2">
+                 <div className="p-2 bg-primary/10 rounded-lg text-primary">
+                  <Zap size={20} />
+                </div>
+                <span className="font-bold text-xl">2x</span>
+              </div>
+              <p className="text-sm text-muted">Deployment frequency via CI/CD & DORA metrics.</p>
+            </div>
+
+            <div className="bg-surface/50 border border-white/5 p-6 rounded-2xl hover:border-primary/30 transition-colors">
+              <div className="flex items-center gap-3 mb-2">
+                 <div className="p-2 bg-secondary/10 rounded-lg text-secondary">
+                  <Cpu size={20} />
+                </div>
+                <span className="font-bold text-xl">&gt;50%</span>
+              </div>
+              <p className="text-sm text-muted">Revenue processed by recurring payments system.</p>
             </div>
           </div>
         </section>
@@ -158,9 +198,9 @@ export default function App() {
 
           <div className="space-y-12">
             <ExperienceItem 
-              role="Senior Software Engineer"
+              role="Software Engineer"
               company="BEBRIDGE AI"
-              period="Dec 2020 – Present"
+              period="Aug 2022 – Present (3+ Years)"
               location="Seoul, South Korea"
             >
               <div className="space-y-6">
@@ -186,6 +226,24 @@ export default function App() {
                     <li>Built recurring payments platform processing <strong>&gt;50%</strong> of revenue and usage-based pricing models (+20% conversion).</li>
                     <li>Developed feature-rich admin panels boosting support efficiency by 40%.</li>
                     <li>Shipped cross-platform desktop apps (Electron) with 17 releases in 7 months, serving 33% of user base.</li>
+                  </ul>
+                </div>
+              </div>
+            </ExperienceItem>
+
+            <ExperienceItem 
+              role="Software Engineer Intern"
+              company="BEBRIDGE AI"
+              period="Dec 2020 – Aug 2022 (1 Year 8 Months)"
+              location="Seoul, South Korea"
+            >
+               <div className="space-y-6">
+                <div>
+                  <h4 className="text-sm font-bold text-text mb-2 uppercase tracking-wider">Foundational Engineering</h4>
+                  <ul className="list-disc pl-5 space-y-2 text-muted">
+                    <li>Contributed to the initial development of Slid's core video note-taking features.</li>
+                    <li>Assisted in migrating legacy codebases to modern React/TypeScript architectures.</li>
+                    <li>Participated in early-stage infrastructure setup on AWS.</li>
                   </ul>
                 </div>
               </div>
@@ -229,9 +287,21 @@ export default function App() {
           <div className="md:col-span-1">
             <h2 className="text-2xl font-bold mb-6">Education</h2>
             <div className="bg-surface p-6 rounded-xl border border-white/10 h-full">
-              <h3 className="font-bold text-lg">B.Sc., Biotechnology</h3>
-              <p className="text-primary">Yonsei University</p>
+              <h3 className="font-bold text-lg">B.Sc., Bioengineering</h3>
+              <div className="flex items-center gap-2 flex-wrap">
+                <p className="text-primary">Yonsei University</p>
+                <span className="text-xs px-2 py-0.5 bg-primary/10 text-primary rounded-full border border-primary/20">
+                  QS World Top #50 (2025)
+                </span>
+              </div>
               <p className="text-sm text-muted mt-1">2017 – 2022</p>
+
+              <div className="mt-4 pt-4 border-t border-white/5">
+                <h3 className="font-bold text-lg">High School</h3>
+                <p className="text-primary">Groupe Scolaire Officiel de Butare</p>
+                <p className="text-sm text-muted mt-1">2012 – 2014</p>
+              </div>
+
               <div className="mt-6 pt-4 border-t border-white/10">
                 <p className="font-semibold text-sm mb-3">Awards</p>
                 <ul className="text-sm text-muted space-y-2">
@@ -262,8 +332,22 @@ export default function App() {
           </div>
 
           <div className="md:col-span-1">
-            <h2 className="text-2xl font-bold mb-6">Languages</h2>
+            <h2 className="text-2xl font-bold mb-6">Profile & Languages</h2>
             <div className="bg-surface p-6 rounded-xl border border-white/10 h-full">
+              <div className="space-y-3 mb-6 pb-6 border-b border-white/10 text-sm">
+                <div className="flex justify-between">
+                  <span className="text-muted">Age</span>
+                  <span className="font-semibold">28</span>
+                </div>
+                <div className="flex justify-between">
+                  <span className="text-muted">Nationality</span>
+                  <span className="font-semibold">Rwandan</span>
+                </div>
+                <div className="flex justify-between">
+                  <span className="text-muted">Location</span>
+                  <span className="font-semibold">South Korea</span>
+                </div>
+              </div>
               <ul className="space-y-4">
                 <li>
                   <div className="flex justify-between mb-1">
