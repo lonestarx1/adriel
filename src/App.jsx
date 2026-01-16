@@ -335,6 +335,7 @@ export default function App() {
                 <span className="inline-flex items-center gap-2">
                   <Globe size={16} /> Open to US / Canada / Korea / Remote
                 </span>
+                <span className="text-muted/70">28 years old, Rwandan</span>
               </div>
 
               <div className="flex flex-wrap gap-3">
