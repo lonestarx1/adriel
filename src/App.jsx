@@ -1,482 +1,633 @@
 import React, { useState } from 'react';
-import { 
-  Github, 
-  Linkedin, 
-  Mail, 
-  FileText, 
-  Download, 
-  ExternalLink, 
-  Terminal, 
-  Cpu, 
-  Globe, 
-  Zap, 
+import {
+  Award,
+  Briefcase,
+  ExternalLink,
+  FileText,
+  Globe,
+  GraduationCap,
+  Linkedin,
+  Mail,
+  MapPin,
   Menu,
-  X
+  Shield,
+  X,
 } from 'lucide-react';
+
+const stats = [
+  {
+    value: '4+ years',
+    label: 'Building production AI and backend systems',
+  },
+  {
+    value: '~50%',
+    label: 'Active users on the Slid desktop app after rebuild',
+  },
+  {
+    value: '~90%',
+    label: 'Reduction in human dubbing time with Proteus',
+  },
+  {
+    value: '10k+ users',
+    label: 'Scale supported on the Summary mobile app',
+  },
+];
+
+const skillGroups = [
+  {
+    title: 'Languages',
+    items: ['Python', 'TypeScript', 'JavaScript', 'Go', 'Rust'],
+  },
+  {
+    title: 'Backend',
+    items: ['Django', 'FastAPI', 'Node.js', 'NestJS', 'Gin'],
+  },
+  {
+    title: 'AI / ML (Applied)',
+    items: ['LangChain', 'LangGraph', 'Autogen', 'RAG', 'TTS / STT', 'LLMs', 'Lip Sync'],
+  },
+  {
+    title: 'Infra',
+    items: ['AWS', 'GCP', 'Docker', 'Kubernetes', 'Terraform'],
+  },
+  {
+    title: 'Datastores',
+    items: ['PostgreSQL', 'MySQL', 'Redis', 'Pinecone', 'MongoDB'],
+  },
+  {
+    title: 'Media',
+    items: ['ffmpeg', 'Audio/video processing pipelines'],
+  },
+  {
+    title: 'Web3',
+    items: ['Wallet development', 'DeFi risk monitoring'],
+  },
+];
+
+const experience = [
+  {
+    role: 'Software Engineer - AI & Backend',
+    company: 'Bebridge',
+    period: 'Sep 2022 - Present',
+    location: 'Seoul / Global',
+    highlights: [
+      'Core engineer on Slid, Summary, and DipClip, shipping production AI systems end to end.',
+      'Owned backend and cloud infrastructure, enabling global performance improvements.',
+      'Designed recurring subscription payments to drive sustainable monetization.',
+      'Introduced Whisper-based transcription that became the Auto-Note foundation.',
+      'Represented multiple products at CES 2023 (Las Vegas).',
+    ],
+  },
+  {
+    role: 'Software Engineer (Intern - Full-time)',
+    company: 'Bebridge',
+    period: 'Dec 2020 - Aug 2022',
+    location: 'Seoul, South Korea',
+    highlights: [
+      'Designed, built, and shipped the cross-platform Slid desktop app (macOS/Windows), including code signing and releases; grew to ~50% of active users.',
+      'Helped build Slid\'s early video note-taking features and internal tooling.',
+      'Supported migrations to modern React/TypeScript frontend stacks.',
+      'Contributed to early AWS infrastructure and deployment workflows.',
+    ],
+  },
+];
+
+const products = [
+  {
+    title: 'Slid - AI-Powered Note-Taking for Online Learning',
+    role: 'Lead Software Engineer',
+    timeframe: 'Dec 2020 - Present',
+    bullets: [
+      'Rebuilt the Chrome extension UI and shipped a macOS/Windows desktop app with code signing.',
+      'Desktop app adoption grew to roughly 50% of active users.',
+      'Owned backend infrastructure and global deployments to reduce international latency.',
+      'Implemented recurring subscriptions and introduced Whisper-based Auto-Note.',
+    ],
+    stack: ['TypeScript', 'React', 'Electron', 'Python', 'FastAPI', 'PostgreSQL', 'AWS'],
+  },
+  {
+    title: 'Summary - AI Video Digest Mobile App',
+    role: 'Lead Backend Engineer',
+    timeframe: '2022 - 2024',
+    bullets: [
+      'Built and owned the backend and AI pipeline for summarizing new YouTube uploads.',
+      'Designed channel pooling and ingestion for thousands of subscribed channels.',
+      'Delivered scalable services supporting around 10,000 users.',
+      'Balanced latency, cost, and quality in production AI workflows.',
+    ],
+    stack: ['TypeScript', 'NestJS', 'Python', 'FastAPI', 'MongoDB', 'PostgreSQL', 'AWS Lambda'],
+  },
+  {
+    title: 'DipClip - Short-Form Video Generation',
+    role: 'Lead Backend / AI Engineer',
+    timeframe: '2023 - 2024',
+    bullets: [
+      'Built the AI pipeline that converts long-form video into short, mobile-first clips.',
+      'Designed algorithms to identify key moments and generate precise time-range annotations.',
+      'Led backend development for a B2C app serving approximately 5,000 users.',
+    ],
+    stack: ['TypeScript', 'React Native', 'Python', 'FastAPI', 'PostgreSQL', 'AWS Lambda'],
+  },
+];
+
+const projects = [
+  {
+    title: 'Proteus - AI + Human Dubbing Agent',
+    summary: 'End-to-end pipeline for multilingual dubbing with human validation.',
+    bullets: [
+      'Built transcription, translation, and voice cloning workflows with duration alignment.',
+      'Reduced human dubbing time by roughly 90%.',
+      'System became a core revenue driver with 10+ B2B contracts.',
+    ],
+    stack: ['ffmpeg', 'ElevenLabs', 'OpenAI', 'Gemini', 'LangGraph'],
+  },
+  {
+    title: 'AI-Powered Dubbing Studio',
+    summary: 'Web-based studio for human editors to review and finalize dubbing output.',
+    bullets: [
+      'Integrated Proteus outputs for seamless playback, correction, and approvals.',
+      'Bridged AI systems with human-in-the-loop workflows.',
+    ],
+    stack: ['Web app', 'Playback tooling', 'Review UX'],
+  },
+  {
+    title: 'KOHI - Course Knowledge Graph & Semantic Search',
+    summary: 'Graph visualization and semantic search for large course catalogs.',
+    bullets: [
+      'Built multi-level graph visualization for thousands of courses.',
+      'Processed course data and embedded it into Pinecone for semantic search.',
+    ],
+    stack: ['Visualization', 'Pinecone', 'FastAPI'],
+  },
+  {
+    title: '3Pro Investor Advisor - Financial AI Chatbot',
+    summary: 'RAG chatbot answering investor questions from YouTube expert interviews.',
+    bullets: [
+      'Automated ingestion, transcription, embedding, and vector storage.',
+      'Responses include source video links and timestamps for transparency.',
+    ],
+    stack: ['RAG', 'Vector DB', 'YouTube ingestion'],
+  },
+  {
+    title: 'Korean TTS Model Research & Deployment',
+    summary: 'Benchmarked open-source TTS models and deployed GPU inference servers.',
+    bullets: [
+      'Evaluated GPT-SoVITS, XTTS-v2, MeloTTS, Fish Audio, and others.',
+      'Delivered a production-ready TTS server recommendation.',
+    ],
+    stack: ['GPU deployment', 'TTS', 'Benchmarking'],
+  },
+  {
+    title: 'Korean Lip-Sync AI Systems',
+    summary: 'Research and deployment of MuseTalk and LatentSync for Korean lip-sync.',
+    bullets: ['Optimized models for client-specific latency and quality targets.'],
+    stack: ['MuseTalk', 'LatentSync', 'Model tuning'],
+  },
+  {
+    title: 'Crypto Wallet & DeFi Risk Monitoring',
+    summary: 'Recent work on security systems for DeFi and wallet safety.',
+    bullets: [
+      'Designed wallet security mechanisms and gas optimization workflows.',
+      'Built real-time monitoring for Aave and Compound health metrics.',
+      'Authored a fund-rescue smart contract (testing phase).',
+    ],
+    stack: ['Web3', 'Security', 'Monitoring'],
+  },
+];
+
+const openSource = [
+  {
+    title: 'Tenuo',
+    description: 'AI agent security framework enforcing task-scoped authority.',
+    link: 'https://tenuo.dev/',
+  },
+  {
+    title: 'Horkos',
+    description: 'Secure-by-default infrastructure language compiling to Terraform.',
+    link: 'https://horkos.cloud/',
+  },
+];
+
+const awards = [
+  'National Science Grand Prize (Physics)',
+  'Korean Government Scholarship',
+  'Yonsei Academic Excellence',
+  'Korean Speech Contest Grand Prize',
+  'Slid Hero Award (Transparency)',
+  'Bebridge Hero Award (Focusing on Real Value)',
+];
+
+const education = [
+  {
+    title: 'BSc Bioengineering',
+    org: 'Yonsei University',
+    timeframe: '2017 - 2022',
+  },
+  {
+    title: 'AWS Solutions Architect - Associate',
+    org: 'Amazon Web Services',
+    timeframe: 'Issued May 2022',
+  },
+];
+
+const exposure = [
+  'CES 2023 Presenter (Las Vegas)',
+  'Silicon Valley Immersion (Dec 2025)',
+];
+
+const languages = [
+  { name: 'English', level: 'Fluent' },
+  { name: 'Kinyarwanda', level: 'Native' },
+  { name: 'Korean', level: 'Advanced' },
+  { name: 'French', level: 'Intermediate' },
+];
 
 export default function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
-
   return (
-    <div className="min-h-screen bg-background text-text font-sans selection:bg-primary/30">
-      {/* Navigation */}
-      <nav className="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-md border-b border-white/10">
+    <div className="min-h-screen bg-background text-text font-sans">
+      <nav className="fixed top-0 w-full z-50 bg-background/90 backdrop-blur-md border-b border-slate-200">
         <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
-          <a href="#" className="text-xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-            Engineer Adriel
+          <a href="#about" className="text-lg font-semibold tracking-tight">
+            Adriel Niyodusaba
           </a>
 
-          {/* Desktop Nav */}
-          <div className="hidden md:flex items-center gap-8 text-sm font-medium text-muted hover:text-text transition-colors">
-            <a href="#about" className="hover:text-primary transition-colors">About</a>
-            <a href="#experience" className="hover:text-primary transition-colors">Experience</a>
-            <a href="#projects" className="hover:text-primary transition-colors">Projects</a>
-            <a href="#skills" className="hover:text-primary transition-colors">Skills</a>
-            <a href="#contact" className="px-4 py-2 bg-primary/10 text-primary rounded-full hover:bg-primary/20 transition-colors">
-              Hire Me
+          <div className="hidden md:flex items-center gap-6 text-sm text-muted">
+            <a href="#about" className="hover:text-text transition-colors">
+              About
+            </a>
+            <a href="#skills" className="hover:text-text transition-colors">
+              Skills
+            </a>
+            <a href="#experience" className="hover:text-text transition-colors">
+              Experience
+            </a>
+            <a href="#projects" className="hover:text-text transition-colors">
+              Projects
+            </a>
+            <a
+              href="#contact"
+              className="px-3 py-1.5 border border-slate-300 rounded-full text-text hover:border-primary hover:text-primary transition-colors"
+            >
+              Contact
             </a>
           </div>
 
-          {/* Mobile Menu Button */}
-          <button onClick={toggleMenu} className="md:hidden text-text p-2">
-            {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          <button
+            onClick={() => setIsMenuOpen((prev) => !prev)}
+            className="md:hidden text-text p-2"
+            aria-label="Toggle navigation"
+          >
+            {isMenuOpen ? <X size={20} /> : <Menu size={20} />}
           </button>
         </div>
 
-        {/* Mobile Nav */}
         {isMenuOpen && (
-          <div className="md:hidden absolute top-16 left-0 w-full bg-surface border-b border-white/10 p-6 flex flex-col gap-4 shadow-2xl">
-            <a href="#about" onClick={toggleMenu} className="text-lg font-medium">About</a>
-            <a href="#experience" onClick={toggleMenu} className="text-lg font-medium">Experience</a>
-            <a href="#projects" onClick={toggleMenu} className="text-lg font-medium">Projects</a>
-            <a href="#skills" onClick={toggleMenu} className="text-lg font-medium">Skills</a>
-            <a href="#contact" onClick={toggleMenu} className="text-lg font-medium text-primary">Hire Me</a>
+          <div className="md:hidden absolute top-16 left-0 w-full bg-surface border-b border-slate-200 px-6 py-5 shadow-lg">
+            <div className="flex flex-col gap-4 text-sm text-muted">
+              <a href="#about" onClick={() => setIsMenuOpen(false)} className="hover:text-text">
+                About
+              </a>
+              <a href="#skills" onClick={() => setIsMenuOpen(false)} className="hover:text-text">
+                Skills
+              </a>
+              <a href="#experience" onClick={() => setIsMenuOpen(false)} className="hover:text-text">
+                Experience
+              </a>
+              <a href="#projects" onClick={() => setIsMenuOpen(false)} className="hover:text-text">
+                Projects
+              </a>
+              <a href="#contact" onClick={() => setIsMenuOpen(false)} className="text-primary">
+                Contact
+              </a>
+            </div>
           </div>
         )}
       </nav>
 
-      <main className="pt-24 pb-12 px-6 max-w-6xl mx-auto">
-        
-        {/* HERO SECTION */}
-        <section id="about" className="py-12 md:py-24">
-          <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
-            
+      <main className="pt-24 pb-20 px-6 max-w-6xl mx-auto">
+        <section id="about" className="py-12 md:py-20">
+          <div className="grid lg:grid-cols-[1.1fr_0.9fr] gap-12 items-center">
             <div className="space-y-6">
-              <div className="inline-flex flex-wrap items-center gap-2 text-sm font-medium">
-                <div className="px-3 py-1 rounded-full bg-primary/10 text-primary border border-primary/20 flex items-center gap-2">
-                  <span className="relative flex h-2 w-2">
-                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
-                    <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
-                  </span>
-                  Software Engineer
-                </div>
-                <div className="px-3 py-1 rounded-full bg-surface border border-white/10 text-muted">
-                  4 Years Experience
-                </div>
-                <div className="px-3 py-1 rounded-full bg-surface border border-white/10 text-muted">
-                  Based in Seoul
-                </div>
-                <div className="px-3 py-1 rounded-full bg-surface border border-white/10 text-muted">
-                  28 Years Old
-                </div>
-                <div className="px-3 py-1 rounded-full bg-surface border border-white/10 text-muted">
-                  Rwandan
-                </div>
+              <div className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.2em] text-muted">
+                <Briefcase size={14} /> Software Engineer (AI & Backend)
               </div>
-              
-              <h1 className="text-4xl md:text-6xl font-extrabold leading-tight tracking-tight">
-                Software Engineer building <span className="text-primary">AI-powered solutions</span>.
-              </h1>
-              
-              <p className="text-lg text-muted max-w-xl leading-relaxed">
-                I'm <strong>Adriel Niyodusaba</strong>, a 28-year-old Rwandan Software Engineer based in Seoul, South Korea. With <strong>4 years of professional experience</strong> building AI-powered solutions, I specialize in creating intelligent systems that solve real-world problems. I'm a great team player and leader, passionate about delivering reliable, impactful software that drives business value.
-              </p>
-
-              <div className="flex flex-wrap gap-4 pt-2">
-                <a href="/docs/Adriel%20Niyodusaba%20Resume.pdf" target="_blank" className="flex items-center gap-2 px-6 py-3 bg-primary hover:bg-primary/90 text-white rounded-lg font-semibold transition-all shadow-lg shadow-primary/25">
-                  <Download size={18} />
-                  Download Resume
-                </a>
-                <a href="https://www.linkedin.com/in/adriel-niyodusaba-993a01120/" target="_blank" className="flex items-center gap-2 px-6 py-3 bg-surface border border-white/10 hover:border-white/20 text-text rounded-lg font-medium transition-all">
-                  <Linkedin size={18} />
-                  LinkedIn
-                </a>
+              <div className="space-y-3">
+                <h1 className="text-4xl md:text-6xl font-semibold tracking-tight">
+                  Adriel Niyodusaba
+                </h1>
+                <p className="text-lg text-muted">
+                  I build AI-powered backend systems and applied ML products that ship to production. With 4+ years of
+                  experience across media, video, and language technology, I led delivery for Slid, Summary, and DipClip
+                  across AI pipelines, backend APIs, frontend tools, and cloud infrastructure.
+                </p>
+                <p className="text-base text-muted">
+                  Strengths include RAG systems, speech and video AI, agent pipelines, and cloud-native deployment, with
+                  recent focus on security, Web3, and AI safety.
+                </p>
               </div>
-            </div>
 
-            <div className="relative flex justify-center md:justify-end">
-              <div className="absolute -inset-4 bg-gradient-to-r from-primary/20 to-secondary/20 rounded-full blur-3xl opacity-30"></div>
-              <img 
-                src="/adriel2.png" 
-                alt="Adriel Niyodusaba" 
-                className="relative z-10 w-full max-w-xs h-auto object-cover rounded-3xl shadow-2xl ring-1 ring-white/10"
-              />
-            </div>
-          </div>
-
-          {/* Key Highlights */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <div className="bg-surface/50 border border-white/5 p-6 rounded-2xl hover:border-primary/30 transition-colors">
-              <div className="flex items-center gap-3 mb-2">
-                <div className="p-2 bg-primary/10 rounded-lg text-primary">
-                  <Terminal size={20} />
-                </div>
-                <span className="font-bold text-xl">~90%</span>
-              </div>
-              <p className="text-sm text-muted">Cost reduction via RAG chatbot optimization.</p>
-            </div>
-
-            <div className="bg-surface/50 border border-white/5 p-6 rounded-2xl hover:border-primary/30 transition-colors">
-              <div className="flex items-center gap-3 mb-2">
-                 <div className="p-2 bg-secondary/10 rounded-lg text-secondary">
-                  <Globe size={20} />
-                </div>
-                <span className="font-bold text-xl">&gt;50%</span>
-              </div>
-              <p className="text-sm text-muted">Latency reduction in global AWS/GCP infra.</p>
-            </div>
-
-            <div className="bg-surface/50 border border-white/5 p-6 rounded-2xl hover:border-primary/30 transition-colors">
-              <div className="flex items-center gap-3 mb-2">
-                 <div className="p-2 bg-primary/10 rounded-lg text-primary">
-                  <Zap size={20} />
-                </div>
-                <span className="font-bold text-xl">2x</span>
-              </div>
-              <p className="text-sm text-muted">Deployment frequency via CI/CD & DORA metrics.</p>
-            </div>
-
-            <div className="bg-surface/50 border border-white/5 p-6 rounded-2xl hover:border-primary/30 transition-colors">
-              <div className="flex items-center gap-3 mb-2">
-                 <div className="p-2 bg-secondary/10 rounded-lg text-secondary">
-                  <Cpu size={20} />
-                </div>
-                <span className="font-bold text-xl">&gt;50%</span>
-              </div>
-              <p className="text-sm text-muted">Revenue processed by recurring payments system.</p>
-            </div>
-          </div>
-        </section>
-
-        {/* SKILLS SECTION */}
-        <section id="skills" className="py-16 border-t border-white/5">
-          <h2 className="text-2xl font-bold mb-8">Tech Stack</h2>
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-            <SkillColumn 
-              title="Languages" 
-              icon={<Terminal size={20} className="text-primary" />}
-              items={["Python", "JavaScript / TypeScript", "SQL", "Rust (Exposure)", "Go (Exposure)"]} 
-            />
-            <SkillColumn 
-              title="Backend & AI" 
-              icon={<Cpu size={20} className="text-primary" />}
-              items={["FastAPI / Django", "Node.js", "LangChain / RAG", "OpenAI / Pinecone", "Whisper / LLMs"]} 
-            />
-            <SkillColumn 
-              title="Cloud & Infra" 
-              icon={<Globe size={20} className="text-primary" />}
-              items={["AWS (Lambda, S3)", "GCP (Cloud Run)", "Serverless", "Docker / CI/CD", "FinOps"]} 
-            />
-            <SkillColumn 
-              title="Frontend & Apps" 
-              icon={<Zap size={20} className="text-primary" />}
-              items={["React / Next.js", "Electron", "Tailwind CSS", "React Native", "Cypress"]} 
-            />
-          </div>
-        </section>
-
-        {/* EXPERIENCE SECTION */}
-        <section id="experience" className="py-16 border-t border-white/5">
-          <div className="flex flex-col md:flex-row gap-4 mb-12 items-start md:items-center justify-between">
-            <h2 className="text-3xl font-bold">Experience</h2>
-            <a href="/docs/Adriel%20Niyodusaba%20Resume.pdf" target="_blank" className="text-sm text-primary hover:underline flex items-center gap-1">
-              View Full Resume <ExternalLink size={14} />
-            </a>
-          </div>
-
-          <div className="space-y-12">
-            <ExperienceItem 
-              role="Software Engineer"
-              company="BEBRIDGE AI"
-              period="Aug 2022 – Present (3+ Years)"
-              location="Seoul, South Korea"
-            >
-              <div className="space-y-6">
-                <div>
-                  <h4 className="text-sm font-bold text-text mb-2 uppercase tracking-wider">AI Solutions Development</h4>
-                  <ul className="list-disc pl-5 space-y-2 text-muted">
-                    <li>Developed a reliable <strong>RAG Chatbot</strong> answering questions from video content; implemented caching to lower costs by <strong>90%</strong> and secured B2B contracts.</li>
-                    <li>Created an <strong>AI-powered Video-to-Article pipeline</strong> generating high-quality blog articles, leading to 3+ contracts with major content companies (Hunet, 3Pro).</li>
-                  </ul>
-                </div>
-
-                <div>
-                  <h4 className="text-sm font-bold text-text mb-2 uppercase tracking-wider">Infrastructure & DevOps</h4>
-                  <ul className="list-disc pl-5 space-y-2 text-muted">
-                    <li>Designed global infrastructure (AWS/GCP) for Slid, reducing latency by <strong>&gt;50%</strong> in US/Europe.</li>
-                    <li>Optimized deployment processes and introduced DORA metrics, reducing deployment times by <strong>90%</strong> and doubling frequency.</li>
-                  </ul>
-                </div>
-
-                <div>
-                  <h4 className="text-sm font-bold text-text mb-2 uppercase tracking-wider">Backend & Frontend</h4>
-                  <ul className="list-disc pl-5 space-y-2 text-muted">
-                    <li>Built recurring payments platform processing <strong>&gt;50%</strong> of revenue and usage-based pricing models (+20% conversion).</li>
-                    <li>Developed feature-rich admin panels boosting support efficiency by 40%.</li>
-                    <li>Shipped cross-platform desktop apps (Electron) with 17 releases in 7 months, serving 33% of user base.</li>
-                  </ul>
-                </div>
-              </div>
-            </ExperienceItem>
-
-            <ExperienceItem 
-              role="Software Engineer Intern"
-              company="BEBRIDGE AI"
-              period="Dec 2020 – Aug 2022 (1 Year 8 Months)"
-              location="Seoul, South Korea"
-            >
-               <div className="space-y-6">
-                <div>
-                  <h4 className="text-sm font-bold text-text mb-2 uppercase tracking-wider">Foundational Engineering</h4>
-                  <ul className="list-disc pl-5 space-y-2 text-muted">
-                    <li>Contributed to the initial development of Slid's core video note-taking features.</li>
-                    <li>Assisted in migrating legacy codebases to modern React/TypeScript architectures.</li>
-                    <li>Participated in early-stage infrastructure setup on AWS.</li>
-                  </ul>
-                </div>
-              </div>
-            </ExperienceItem>
-          </div>
-        </section>
-
-        {/* PROJECTS SECTION */}
-        <section id="projects" className="py-16 border-t border-white/5">
-          <h2 className="text-3xl font-bold mb-12">Selected Projects</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <ProjectCard 
-              title="RAG Investor Advisor Chatbot"
-              tags={["RAG", "Python", "Pinecone", "AWS"]}
-              desc="Pipeline that watches YouTube channels, transcribes videos, stores embeddings, and answers finance questions with citations."
-              metric="Reduced costs by ~90% & enabled B2B adoption."
-            />
-            <ProjectCard 
-              title="Video → Article Pipeline"
-              tags={["FastAPI", "GPT-4", "FFMPEG"]}
-              desc="Automated system converting video/manuscripts into SEO-ready HTML articles with images. Delivered via webhooks to client CMS."
-              metric="Secured multiple content company contracts."
-            />
-            <ProjectCard 
-              title="Multi-Language Dubbing"
-              tags={["Cloud Run", "Whisper", "Voice Cloning"]}
-              desc="End-to-end pipeline: Transcription → Agentic Translation (timed) → Voice Cloning → TTS alignment."
-              metric="High-quality voice preservation for global demos."
-            />
-            <ProjectCard 
-              title="KOHI Content Mind Map"
-              tags={["Next.js", "FastAPI", "Visualization"]}
-              desc="Hierarchical visualization for course discovery using auto-transcriptions and topic extraction."
-              metric="Improved discovery across 100+ courses."
-            />
-          </div>
-        </section>
-
-        {/* EDUCATION & AWARDS */}
-        <section className="py-16 grid md:grid-cols-3 gap-8 border-t border-white/5">
-          <div className="md:col-span-1">
-            <h2 className="text-2xl font-bold mb-6">Education</h2>
-            <div className="bg-surface p-6 rounded-xl border border-white/10 h-full">
-              <h3 className="font-bold text-lg">B.Sc., Bioengineering</h3>
-              <div className="flex items-center gap-2 flex-wrap">
-                <p className="text-primary">Yonsei University</p>
-                <span className="text-xs px-2 py-0.5 bg-primary/10 text-primary rounded-full border border-primary/20">
-                  QS World Top #50 (2025)
+              <div className="flex flex-wrap items-center gap-4 text-sm text-muted">
+                <span className="inline-flex items-center gap-2">
+                  <MapPin size={16} /> Seoul, South Korea
+                </span>
+                <span className="inline-flex items-center gap-2">
+                  <Globe size={16} /> Open to US / Canada / Korea / Remote
                 </span>
               </div>
-              <p className="text-sm text-muted mt-1">2017 – 2022</p>
 
-              <div className="mt-4 pt-4 border-t border-white/5">
-                <h3 className="font-bold text-lg">High School</h3>
-                <p className="text-primary">Groupe Scolaire Officiel de Butare</p>
-                <p className="text-sm text-muted mt-1">2012 – 2014</p>
+              <div className="flex flex-wrap gap-3">
+                <a
+                  href="mailto:siradriel@gmail.com"
+                  className="inline-flex items-center gap-2 px-5 py-2.5 bg-primary text-white rounded-full text-sm font-medium hover:bg-primary/90 transition-colors"
+                >
+                  <Mail size={16} /> Email
+                </a>
+                <a
+                  href="/docs/Adriel_resume.pdf"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center gap-2 px-5 py-2.5 border border-slate-300 rounded-full text-sm font-medium hover:border-primary hover:text-primary transition-colors"
+                >
+                  <FileText size={16} /> Resume
+                </a>
+                <a
+                  href="https://www.linkedin.com/in/adriel-niyodusaba-993a01120/"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center gap-2 px-5 py-2.5 border border-slate-300 rounded-full text-sm font-medium hover:border-primary hover:text-primary transition-colors"
+                >
+                  <Linkedin size={16} /> LinkedIn
+                </a>
               </div>
+            </div>
 
-              <div className="mt-6 pt-4 border-t border-white/10">
-                <p className="font-semibold text-sm mb-3">Awards</p>
-                <ul className="text-sm text-muted space-y-2">
-                  <li className="flex gap-2">
-                    <span className="text-primary">★</span>
-                    <span>Grand Prize, National Science Competition (Physics) - Rwanda (2014)</span>
-                  </li>
-                  <li className="flex gap-2">
-                    <span className="text-primary">★</span>
-                    <span>Academic Excellence Award, Yonsei University (2019)</span>
-                  </li>
-                  <li className="flex gap-2">
-                    <span className="text-primary">★</span>
-                    <span>Korean Government Scholarship (2016)</span>
-                  </li>
+            <div className="flex justify-center lg:justify-end">
+              <div className="bg-surface border border-slate-200 rounded-3xl p-4 shadow-sm">
+                <img
+                  src="/adriel2.png"
+                  alt="Adriel Niyodusaba"
+                  className="w-full max-w-xs rounded-2xl object-cover"
+                />
+              </div>
+            </div>
+          </div>
+
+          <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {stats.map((stat) => (
+              <div
+                key={stat.label}
+                className="bg-surface border border-slate-200 rounded-2xl p-5 shadow-sm"
+              >
+                <div className="text-xl font-semibold text-text">{stat.value}</div>
+                <p className="text-sm text-muted mt-2">{stat.label}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <section id="skills" className="py-16 border-t border-slate-200">
+          <SectionHeader
+            title="Core Technical Skills"
+            description="A focused stack across backend, AI systems, and production infrastructure."
+          />
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            {skillGroups.map((group) => (
+              <div key={group.title} className="bg-surface border border-slate-200 rounded-2xl p-6 shadow-sm">
+                <h3 className="text-base font-semibold mb-3">{group.title}</h3>
+                <div className="flex flex-wrap gap-2">
+                  {group.items.map((item) => (
+                    <span
+                      key={item}
+                      className="px-3 py-1 rounded-full bg-slate-100 text-sm text-muted border border-slate-200"
+                    >
+                      {item}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <section id="experience" className="py-16 border-t border-slate-200">
+          <SectionHeader
+            title="Professional Experience"
+            description="End-to-end ownership across AI pipelines, backend architecture, and product delivery."
+          />
+          <div className="space-y-6">
+            {experience.map((role) => (
+              <div key={role.role} className="bg-surface border border-slate-200 rounded-2xl p-6 shadow-sm">
+                <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-2">
+                  <div>
+                    <h3 className="text-lg font-semibold">{role.role}</h3>
+                    <p className="text-sm text-muted">{role.company}</p>
+                  </div>
+                  <div className="text-sm text-muted">
+                    {role.period} · {role.location}
+                  </div>
+                </div>
+                <ul className="mt-4 space-y-2 text-sm text-muted list-disc pl-5">
+                  {role.highlights.map((item) => (
+                    <li key={item}>{item}</li>
+                  ))}
                 </ul>
               </div>
-            </div>
+            ))}
           </div>
-          
-          <div className="md:col-span-1">
-            <h2 className="text-2xl font-bold mb-6">Certifications</h2>
-            <div className="bg-surface p-6 rounded-xl border border-white/10 h-full">
-              <h3 className="font-bold text-lg">AWS Certified Solutions Architect</h3>
-              <p className="text-primary">Associate</p>
-              <p className="text-sm text-muted mt-1">Issued May 2022 — Valid until May 2025</p>
-            </div>
-          </div>
+        </section>
 
-          <div className="md:col-span-1">
-            <h2 className="text-2xl font-bold mb-6">Profile & Languages</h2>
-            <div className="bg-surface p-6 rounded-xl border border-white/10 h-full">
-              <div className="space-y-3 mb-6 pb-6 border-b border-white/10 text-sm">
-                <div className="flex justify-between">
-                  <span className="text-muted">Age</span>
-                  <span className="font-semibold">28</span>
-                </div>
-                <div className="flex justify-between">
-                  <span className="text-muted">Nationality</span>
-                  <span className="font-semibold">Rwandan</span>
-                </div>
-                <div className="flex justify-between">
-                  <span className="text-muted">Location</span>
-                  <span className="font-semibold">South Korea</span>
+        <section id="products" className="py-16 border-t border-slate-200">
+          <SectionHeader
+            title="Product Highlights"
+            description="Leadership across Slid, Summary, and DipClip with measurable product impact."
+          />
+          <div className="grid gap-6 lg:grid-cols-3">
+            {products.map((product) => (
+              <DetailCard
+                key={product.title}
+                title={product.title}
+                subtitle={`${product.role} · ${product.timeframe}`}
+                bullets={product.bullets}
+                tags={product.stack}
+              />
+            ))}
+          </div>
+        </section>
+
+        <section id="projects" className="py-16 border-t border-slate-200">
+          <SectionHeader
+            title="Selected Projects & Clients"
+            description="B2B systems, client engagements, and applied research deployments."
+          />
+          <div className="grid gap-6 lg:grid-cols-2">
+            {projects.map((project) => (
+              <DetailCard
+                key={project.title}
+                title={project.title}
+                subtitle={project.summary}
+                bullets={project.bullets}
+                tags={project.stack}
+              />
+            ))}
+          </div>
+        </section>
+
+        <section id="open-source" className="py-16 border-t border-slate-200">
+          <SectionHeader
+            title="Open Source"
+            description="Active contributions to security-first infrastructure and AI safety tooling."
+          />
+          <div className="grid gap-6 md:grid-cols-2">
+            {openSource.map((project) => (
+              <div key={project.title} className="bg-surface border border-slate-200 rounded-2xl p-6 shadow-sm">
+                <div className="flex items-start justify-between gap-3">
+                  <div>
+                    <h3 className="text-lg font-semibold">{project.title}</h3>
+                    <p className="text-sm text-muted mt-2">{project.description}</p>
+                  </div>
+                  <a
+                    href={project.link}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="text-primary text-sm inline-flex items-center gap-1"
+                  >
+                    Visit <ExternalLink size={14} />
+                  </a>
                 </div>
               </div>
-              <ul className="space-y-4">
-                <li>
-                  <div className="flex justify-between mb-1">
-                    <span className="font-medium">English</span>
-                    <span className="text-muted text-sm">Fluent</span>
+            ))}
+          </div>
+        </section>
+
+        <section id="education" className="py-16 border-t border-slate-200">
+          <SectionHeader
+            title="Education, Certifications, and Recognition"
+            description="Academic background, awards, and professional exposure."
+          />
+          <div className="grid gap-6 lg:grid-cols-3">
+            <div className="bg-surface border border-slate-200 rounded-2xl p-6 shadow-sm">
+              <h3 className="text-base font-semibold flex items-center gap-2">
+                <GraduationCap size={18} /> Education & Certifications
+              </h3>
+              <div className="mt-4 space-y-4 text-sm text-muted">
+                {education.map((item) => (
+                  <div key={item.title}>
+                    <p className="font-medium text-text">{item.title}</p>
+                    <p>{item.org}</p>
+                    <p className="text-xs text-muted">{item.timeframe}</p>
                   </div>
-                  <div className="h-1.5 w-full bg-white/5 rounded-full overflow-hidden">
-                    <div className="h-full bg-primary w-full"></div>
-                  </div>
-                </li>
-                <li>
-                  <div className="flex justify-between mb-1">
-                    <span className="font-medium">Kinyarwanda</span>
-                    <span className="text-muted text-sm">Native/Fluent</span>
-                  </div>
-                  <div className="h-1.5 w-full bg-white/5 rounded-full overflow-hidden">
-                    <div className="h-full bg-primary w-full"></div>
-                  </div>
-                </li>
-                <li>
-                  <div className="flex justify-between mb-1">
-                    <span className="font-medium">Korean</span>
-                    <span className="text-muted text-sm">Intermediate</span>
-                  </div>
-                  <div className="h-1.5 w-full bg-white/5 rounded-full overflow-hidden">
-                    <div className="h-full bg-secondary w-[60%]"></div>
-                  </div>
-                </li>
-                <li>
-                  <div className="flex justify-between mb-1">
-                    <span className="font-medium">French</span>
-                    <span className="text-muted text-sm">Intermediate</span>
-                  </div>
-                  <div className="h-1.5 w-full bg-white/5 rounded-full overflow-hidden">
-                    <div className="h-full bg-secondary w-[50%]"></div>
-                  </div>
-                </li>
+                ))}
+              </div>
+            </div>
+
+            <div className="bg-surface border border-slate-200 rounded-2xl p-6 shadow-sm">
+              <h3 className="text-base font-semibold flex items-center gap-2">
+                <Award size={18} /> Awards
+              </h3>
+              <ul className="mt-4 space-y-2 text-sm text-muted list-disc pl-5">
+                {awards.map((award) => (
+                  <li key={award}>{award}</li>
+                ))}
               </ul>
+            </div>
+
+            <div className="bg-surface border border-slate-200 rounded-2xl p-6 shadow-sm">
+              <h3 className="text-base font-semibold flex items-center gap-2">
+                <Shield size={18} /> Professional Exposure & Languages
+              </h3>
+              <div className="mt-4 space-y-4 text-sm text-muted">
+                <div>
+                  <p className="font-medium text-text">Exposure</p>
+                  <ul className="mt-2 space-y-2 list-disc pl-5">
+                    {exposure.map((item) => (
+                      <li key={item}>{item}</li>
+                    ))}
+                  </ul>
+                </div>
+                <div>
+                  <p className="font-medium text-text">Languages</p>
+                  <ul className="mt-2 space-y-2">
+                    {languages.map((language) => (
+                      <li key={language.name} className="flex items-center justify-between">
+                        <span>{language.name}</span>
+                        <span className="text-xs text-muted">{language.level}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
             </div>
           </div>
         </section>
 
-        {/* CONTACT SECTION */}
-        <section id="contact" className="py-24 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">Let's work together.</h2>
-          <p className="text-muted text-lg max-w-2xl mx-auto mb-10">
-            I’m looking for roles where I can build reliable systems, scale AI products, or lead engineering teams. 
+        <section id="contact" className="py-20 border-t border-slate-200 text-center">
+          <h2 className="text-3xl md:text-4xl font-semibold">Let's build something durable.</h2>
+          <p className="text-muted mt-4 max-w-2xl mx-auto">
+            I am open to roles where I can lead AI and backend systems, scale production infrastructure, and deliver
+            products with measurable business impact.
           </p>
-          
-          <div className="flex flex-col md:flex-row items-center justify-center gap-4">
-            <a href="mailto:siradriel@gmail.com" className="w-full md:w-auto flex items-center justify-center gap-2 px-8 py-4 bg-primary text-white rounded-xl font-bold hover:bg-primary/90 transition-all">
-              <Mail size={20} />
-              siradriel@gmail.com
+          <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3">
+            <a
+              href="mailto:siradriel@gmail.com"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-white rounded-full text-sm font-medium hover:bg-primary/90 transition-colors"
+            >
+              <Mail size={16} /> siradriel@gmail.com
             </a>
-            <a href="https://www.linkedin.com/in/adriel-niyodusaba-993a01120/" target="_blank" className="w-full md:w-auto flex items-center justify-center gap-2 px-8 py-4 bg-surface border border-white/10 text-text rounded-xl font-bold hover:bg-surface/80 transition-all">
-              <Linkedin size={20} />
-              Connect on LinkedIn
+            <a
+              href="https://www.linkedin.com/in/adriel-niyodusaba-993a01120/"
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-2 px-6 py-3 border border-slate-300 rounded-full text-sm font-medium hover:border-primary hover:text-primary transition-colors"
+            >
+              <Linkedin size={16} /> Connect on LinkedIn
             </a>
           </div>
-
-          <div className="mt-16 pt-8 border-t border-white/5 flex flex-col md:flex-row items-center justify-center gap-8 text-sm text-muted">
-            <a href="/docs/Adriel%20Niyodusaba%20Resume.pdf" target="_blank" className="hover:text-primary flex items-center gap-1">
-              <FileText size={14} /> Resume (PDF)
+          <div className="mt-8 text-sm text-muted flex items-center justify-center gap-3">
+            <FileText size={14} />
+            <a href="/docs/Adriel_resume.pdf" target="_blank" rel="noreferrer" className="hover:text-primary">
+              Download resume (PDF)
             </a>
           </div>
         </section>
       </main>
+
+      <footer className="py-8 border-t border-slate-200">
+        <div className="max-w-6xl mx-auto px-6 text-sm text-muted flex flex-col sm:flex-row items-center justify-between gap-3">
+          <span>Engineeradriel.com</span>
+          <span>Seoul, South Korea · Open to US / Canada / Korea / Remote</span>
+        </div>
+      </footer>
     </div>
   );
 }
 
-// Sub-components for cleaner code
-function SkillColumn({ title, icon, items }) {
+function SectionHeader({ title, description }) {
   return (
-    <div>
-      <div className="flex items-center gap-2 mb-4 text-text font-semibold">
-        {icon}
-        <h3>{title}</h3>
-      </div>
-      <ul className="space-y-2">
-        {items.map((item, i) => (
-          <li key={i} className="text-muted text-sm border-l-2 border-white/10 pl-3 hover:border-primary transition-colors">
-            {item}
-          </li>
+    <div className="mb-10">
+      <h2 className="text-2xl md:text-3xl font-semibold">{title}</h2>
+      <p className="text-muted mt-3 max-w-3xl">{description}</p>
+    </div>
+  );
+}
+
+function DetailCard({ title, subtitle, bullets, tags }) {
+  return (
+    <div className="bg-surface border border-slate-200 rounded-2xl p-6 shadow-sm h-full flex flex-col">
+      <h3 className="text-lg font-semibold">{title}</h3>
+      <p className="text-sm text-muted mt-2">{subtitle}</p>
+      <ul className="mt-4 space-y-2 text-sm text-muted list-disc pl-5">
+        {bullets.map((item) => (
+          <li key={item}>{item}</li>
         ))}
       </ul>
-    </div>
-  );
-}
-
-function ExperienceItem({ role, company, period, location, children }) {
-  return (
-    <div className="relative pl-8 md:pl-0">
-      <div className="md:grid md:grid-cols-[1fr_2px_1fr] md:gap-8">
-        <div className="md:text-right md:pt-1">
-          <h3 className="text-xl font-bold text-text">{company}</h3>
-          <p className="text-primary font-medium">{role}</p>
-          <p className="text-sm text-muted mt-1">{period}</p>
-          <p className="text-xs text-muted/60">{location}</p>
-        </div>
-        
-        <div className="hidden md:flex flex-col items-center">
-          <div className="w-3 h-3 bg-primary rounded-full"></div>
-          <div className="flex-1 w-0.5 bg-gradient-to-b from-primary/50 to-transparent my-2"></div>
-        </div>
-
-        <div className="mt-4 md:mt-0 pb-12">
-           {children}
-        </div>
-      </div>
-    </div>
-  );
-}
-
-function ProjectCard({ title, desc, tags, metric }) {
-  return (
-    <div className="group bg-surface border border-white/10 p-6 rounded-2xl hover:border-primary/50 transition-all hover:-translate-y-1">
-      <h3 className="text-xl font-bold mb-3 group-hover:text-primary transition-colors">{title}</h3>
-      <p className="text-muted text-sm mb-4 leading-relaxed">{desc}</p>
-      
-      {metric && (
-        <div className="mb-5 px-3 py-2 bg-background/50 rounded-lg border border-white/5 text-sm">
-          <span className="text-secondary font-semibold">Impact:</span> {metric}
-        </div>
-      )}
-
-      <div className="flex flex-wrap gap-2 mt-auto">
-        {tags.map(tag => (
-          <span key={tag} className="px-2 py-1 bg-white/5 rounded text-xs text-muted font-medium border border-white/5">
+      <div className="mt-5 flex flex-wrap gap-2">
+        {tags.map((tag) => (
+          <span
+            key={tag}
+            className="px-3 py-1 rounded-full bg-slate-100 text-xs text-muted border border-slate-200"
+          >
             {tag}
           </span>
         ))}
@@ -484,4 +635,3 @@ function ProjectCard({ title, desc, tags, metric }) {
     </div>
   );
 }
-

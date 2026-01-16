@@ -6,12 +6,12 @@ export default {
   theme: {
     extend: {
       colors: {
-        background: "#0b1220",
-        surface: "#1e293b",
-        primary: "#7c3aed",
-        secondary: "#22c55e",
-        text: "#f1f5f9",
-        muted: "#94a3b8",
+        background: "#f8fafc",
+        surface: "#ffffff",
+        primary: "#1d4ed8",
+        secondary: "#0f766e",
+        text: "#0f172a",
+        muted: "#64748b",
       },
       fontFamily: {
         sans: ['Inter', 'system-ui', 'sans-serif'],
