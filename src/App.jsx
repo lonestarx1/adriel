@@ -71,11 +71,11 @@ const experience = [
     period: 'Sep 2022 - Present',
     location: 'Seoul / Global',
     highlights: [
-      'Core engineer on Slid, Summary, and DipClip, shipping production AI systems end to end.',
+      'Lead engineer on SaaS products: Slid, Summary, and DipClip, shipping production AI systems end to end.',
       'Owned backend and cloud infrastructure, enabling global performance improvements.',
       'Designed recurring subscription payments to drive sustainable monetization.',
       'Introduced Whisper-based transcription that became the Auto-Note foundation.',
-      'Represented multiple products at CES 2023 (Las Vegas).',
+      'Onboarded and mentored new hires and interns, helping them ramp quickly and contribute to production systems.',
     ],
   },
   {
@@ -201,11 +201,7 @@ const openSource = [
     description: 'AI agent security framework enforcing task-scoped authority.',
     link: 'https://tenuo.dev/',
   },
-  {
-    title: 'Horkos',
-    description: 'Secure-by-default infrastructure language compiling to Terraform.',
-    link: 'https://horkos.cloud/',
-  },
+  
 ];
 
 const awards = [
@@ -351,7 +347,7 @@ export default function App() {
                   rel="noreferrer"
                   className="inline-flex items-center gap-2 px-5 py-2.5 border border-slate-300 rounded-full text-sm font-medium hover:border-primary hover:text-primary transition-colors"
                 >
-                  <FileText size={16} /> Resume
+                  <FileText size={16} /> Resume - Long Form
                 </a>
                 <a
                   href="https://www.linkedin.com/in/adriel-niyodusaba-993a01120/"
@@ -588,7 +584,7 @@ export default function App() {
           <div className="mt-8 text-sm text-muted flex items-center justify-center gap-3">
             <FileText size={14} />
             <a href="/docs/Adriel_resume.pdf" target="_blank" rel="noreferrer" className="hover:text-primary">
-              Download resume (PDF)
+              Download resume (long form PDF)
             </a>
           </div>
         </section>

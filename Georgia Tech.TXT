@@ -1,0 +1,18 @@
+
+Briefly describe your eventual career objective. (e.g., University Professor, Industry Researcher, etc.).
+-> Principal Software Engineer, Distributed Systems and Infrastructure
+
+Describe your CS-related internships, if any.
+-> Software Engineer Intern, Bebridge, December 2020 - August 2022.
+
+Describe your CS-related post-undergraduate degree work experience.
+-> Since graduating in 2022, I have worked at Bebridge as a Software Engineer (AI and Backend). I lead development of production backend services and cloud infrastructure, building AI pipelines for transcription, summarization, and video processing, and deploying LLM agent systems supporting consumer and B2B products.
+
+Explain in ONE sentence your purpose in studying in the OMSCS program.
+-> My purpose in OMSCS is to build a rigorous, broad foundation in computer systems, close key computer science knowledge gaps from my non-CS undergraduate background, and strengthen my technical depth to accelerate my growth after nearly five years of professional software engineering experience.
+
+Explain in ONE sentence how the OMSCS degree will benefit YOU.
+-> OMSCS will benefit me by giving me a structured, rigorous computer science education in computer systems that fills gaps from my non-CS undergraduate background, strengthens my ability to reason about performance, reliability, and scalability, and makes me a more effective engineer and technical leader in distributed backend and infrastructure work.
+
+Explain succinctly why your academic credentials and your CS-related experiences have prepared you for rigorous, graduate-level academic CS work.
+-> My academic background in bioengineering built strong mathematical and analytical foundations, and my nearly five years of professional software engineering have required rigorous problem solving in distributed backend systems, cloud infrastructure, and production AI pipelines. I have also strengthened my CS fundamentals through focused study of data structures and algorithms, demonstrated by successfully clearing Amazon’s L5-SDEII coding interviews.
