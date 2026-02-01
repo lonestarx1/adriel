@@ -35,7 +35,7 @@ Sep 2022 – Present
 **Software Engineer (Intern → Full-time)**
 Dec 2020 – Aug 2022
 
-Core engineer on **Slid, Summary, and Dipclip**, later expanding into **B2B media AI**, **client projects**, and **Web3 initiatives**.
+Lead engineer on **SaaS products: Slid, Summary, and Dipclip**, shipping production AI systems end to end, later expanding into **B2B media AI**, **client projects**, and **Web3 initiatives**.
 
 ---
 
@@ -174,10 +174,6 @@ Seoul, South Korea
 - **Tenuo** — AI agent security framework enforcing **task-scoped authority**
     
     [https://tenuo.dev/](https://tenuo.dev/)
-    
-- **Horkos** — Secure-by-default infrastructure language compiling to Terraform
-    
-    [https://horkos.cloud/](https://horkos.cloud/)
     
 
 ---
