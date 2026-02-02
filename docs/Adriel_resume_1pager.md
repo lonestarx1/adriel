@@ -65,7 +65,7 @@ Software Engineer with 4+ years building **production AI systems** in media and 
 
 ## **EDUCATION & CREDENTIALS**
 
-**BSc Bioengineering** — Yonsei University (2022) | **AWS Solutions Architect – Associate**
+**BSc Bioengineering** — Yonsei University (Global Top #50, QS 2026) (2022) | **AWS Solutions Architect – Associate**
 
 ---
 

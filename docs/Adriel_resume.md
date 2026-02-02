@@ -180,7 +180,7 @@ Seoul, South Korea
 
 ## **EDUCATION & CERTIFICATIONS**
 
-- **BSc Bioengineering** — Yonsei University (2017-2022)
+- **BSc Bioengineering** — Yonsei University (Global Top #50, QS 2026) (2017-2022)
 - **AWS Solutions Architect – Associate**
 
 ---

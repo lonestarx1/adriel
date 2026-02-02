@@ -216,7 +216,7 @@ const awards = [
 const education = [
   {
     title: 'BSc Bioengineering',
-    org: 'Yonsei University',
+    org: 'Yonsei University (Global Top #50, QS 2026)',
     timeframe: '2017 - 2022',
   },
   {
