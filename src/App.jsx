@@ -216,7 +216,7 @@ const awards = [
 const education = [
   {
     title: 'BSc Bioengineering',
-    org: 'Yonsei University',
+    org: 'Yonsei University (Global Top #50, QS 2026)',
     timeframe: '2017 - 2022',
   },
   {
@@ -342,12 +342,20 @@ export default function App() {
                   <Mail size={16} /> Email
                 </a>
                 <a
+                  href="/docs/Adriel_resume_1pager.pdf"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center gap-2 px-5 py-2.5 border border-slate-300 rounded-full text-sm font-medium hover:border-primary hover:text-primary transition-colors"
+                >
+                  <FileText size={16} /> Resume (1 Page)
+                </a>
+                <a
                   href="/docs/Adriel_resume.pdf"
                   target="_blank"
                   rel="noreferrer"
                   className="inline-flex items-center gap-2 px-5 py-2.5 border border-slate-300 rounded-full text-sm font-medium hover:border-primary hover:text-primary transition-colors"
                 >
-                  <FileText size={16} /> Resume - Long Form
+                  <FileText size={16} /> Resume (4 Pages)
                 </a>
                 <a
                   href="https://www.linkedin.com/in/adriel-niyodusaba-993a01120/"
@@ -584,7 +592,7 @@ export default function App() {
           <div className="mt-8 text-sm text-muted flex items-center justify-center gap-3">
             <FileText size={14} />
             <a href="/docs/Adriel_resume.pdf" target="_blank" rel="noreferrer" className="hover:text-primary">
-              Download resume (long form PDF)
+              Download resume (PDF)
             </a>
           </div>
         </section>

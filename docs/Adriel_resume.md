@@ -51,7 +51,7 @@ Seoul, South Korea | Dec 2020 – Present
 - **Refactored the Chrome extension frontend** and **designed, built, and shipped** a cross-platform **desktop app (macOS & Windows)** from scratch, handling code signing and releases; desktop app grew to **~50% of active users**.
 - Owned the **entire backend and cloud infrastructure** (APIs, databases, background jobs, deployments); built **global infrastructure** that significantly reduced international latency and enabled worldwide usage.
 - **Designed and implemented recurring subscription payments**, enabling sustainable monetization and long-term growth.
-- Introduced **AI transcription (Whisper)** during an internal hackathon, which became the foundation of Slid’s **Auto-Note** feature.
+- Introduced **AI transcription (Whisper)** during an internal hackathon, which became the foundation of Slid's **Auto-Note** feature.
 - Represented Slid at **CES 2023 (Las Vegas)**, presenting the product and its AI capabilities to an international audience.
 
 **Tech:** TypeScript, React, Electron, Python, Node.js, FastAPI, PostgreSQL, ffmpeg, Whisper, AWS, Docker
@@ -180,7 +180,7 @@ Seoul, South Korea
 
 ## **EDUCATION & CERTIFICATIONS**
 
-- **BSc Bioengineering** — Yonsei University (2017-2022)
+- **BSc Bioengineering** — Yonsei University (Global Top #50, QS 2026) (2017-2022)
 - **AWS Solutions Architect – Associate**
 
 ---
