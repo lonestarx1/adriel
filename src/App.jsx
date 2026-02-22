@@ -197,11 +197,15 @@ const projects = [
 
 const openSource = [
   {
+    title: 'GoGrid (G2)',
+    description: 'A unified system for developing and orchestrating production AI agents in Go. Creator & maintainer.',
+    link: 'https://gogrid.vercel.app/',
+  },
+  {
     title: 'Tenuo',
     description: 'AI agent security framework enforcing task-scoped authority.',
     link: 'https://tenuo.dev/',
   },
-  
 ];
 
 const awards = [
@@ -482,7 +486,7 @@ export default function App() {
         <section id="open-source" className="py-16 border-t border-slate-200">
           <SectionHeader
             title="Open Source"
-            description="Active contributions to security-first infrastructure and AI safety tooling."
+            description="Building production-grade AI infrastructure and safety tooling."
           />
           <div className="grid gap-6 md:grid-cols-2">
             {openSource.map((project) => (
