@@ -203,7 +203,7 @@ const openSource = [
   },
   {
     title: 'Tenuo',
-    description: 'AI agent security framework enforcing task-scoped authority.',
+    description: 'AI agent security framework enforcing task-scoped authority. Contributor.',
     link: 'https://tenuo.dev/',
   },
 ];
