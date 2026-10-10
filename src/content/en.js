@@ -65,8 +65,8 @@ const en = {
       description: 'B2B systems, client engagements, hackathons, and applied research deployments.',
     },
     openSource: {
-      title: 'Open Source & Community',
-      description: 'Production-grade AI infrastructure, safety tooling, and tools for the communities I belong to.',
+      title: 'Open Source',
+      description: 'Building production-grade AI infrastructure and safety tooling.',
     },
     education: {
       title: 'Education, Certifications, and Recognition',
@@ -293,19 +293,6 @@ const en = {
       description: 'Capability engine for AI agents with cryptographically attenuated, task-scoped authority (Rust core).',
       role: 'Contributor: added the AutoGen AgentChat integration',
       link: 'https://tenuo.dev/',
-    },
-    {
-      title: 'GIOS Study',
-      description:
-        'Native macOS study app (Tauri 2) for Georgia Tech OMSCS CS-6200, with active recall, SM-2 spaced repetition, and a bundled OSTEP corpus.',
-      role: 'Creator',
-      link: 'https://github.com/lonestarx1/gios-study-app',
-    },
-    {
-      title: 'RCA-SK Website',
-      description: 'Website for the Rwandan Community Abroad in South Korea.',
-      role: 'Built and maintain',
-      link: 'https://rca-sk-website-2024.vercel.app/',
     },
   ],
 

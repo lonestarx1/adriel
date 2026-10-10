@@ -65,8 +65,8 @@ const ko = {
       description: 'B2B 시스템, 고객사 프로젝트, 해커톤, 응용 연구 배포 사례입니다.',
     },
     openSource: {
-      title: '오픈소스 & 커뮤니티',
-      description: '프로덕션급 AI 인프라와 안전성 도구, 그리고 제가 속한 커뮤니티를 위한 도구를 만듭니다.',
+      title: '오픈소스',
+      description: '프로덕션급 AI 인프라와 안전성 도구를 만듭니다.',
     },
     education: {
       title: '학력, 자격증 및 수상',
@@ -293,19 +293,6 @@ const ko = {
       description: '암호학적으로 범위가 제한된 작업 단위 권한을 AI 에이전트에 부여하는 권한 엔진 (Rust 코어).',
       role: '컨트리뷰터: AutoGen AgentChat 연동 기능 추가',
       link: 'https://tenuo.dev/',
-    },
-    {
-      title: 'GIOS Study',
-      description:
-        '조지아공대 OMSCS CS-6200 과목을 위한 macOS 네이티브 학습 앱 (Tauri 2). 능동적 회상, SM-2 간격 반복, OSTEP 학습 자료 포함.',
-      role: '제작자',
-      link: 'https://github.com/lonestarx1/gios-study-app',
-    },
-    {
-      title: 'RCA-SK 웹사이트',
-      description: '재한 르완다인 커뮤니티(Rwandan Community Abroad - South Korea) 웹사이트.',
-      role: '개발 및 운영',
-      link: 'https://rca-sk-website-2024.vercel.app/',
     },
   ],
 

@@ -197,14 +197,11 @@ Seoul, South Korea
 
 ---
 
-## **OPEN SOURCE, HACKATHONS & COMMUNITY**
+## **OPEN SOURCE & HACKATHONS**
 
 - **GoGrid (G2)** — Creator & maintainer of a unified system for developing and orchestrating **production AI agents in Go**. [gogrid.vercel.app](https://gogrid.vercel.app/)
 - **Tenuo** — Contributor to an AI agent security framework enforcing **task-scoped authority**; added the **AutoGen AgentChat integration**. [tenuo.dev](https://tenuo.dev/)
 - **PowerPulse** *(Frontiers GenAI Hackathon, ALX Kigali, Jul 2026)* — Multilingual power-outage assistant (English / Kinyarwanda) grounded in the national utility's published outage records; the LLM only phrases verified context and never invents restoration times. [powerpulse-africa.vercel.app](https://powerpulse-africa.vercel.app/)
-- **GIOS Study** — Native macOS study app (Tauri 2) for Georgia Tech OMSCS CS-6200 with active recall and SM-2 spaced repetition. [GitHub](https://github.com/lonestarx1/gios-study-app)
-- **RCA-SK Website** — Built and maintain the website for the Rwandan Community Abroad in South Korea.
-
 
 ---
 
