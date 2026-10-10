@@ -13,3 +13,19 @@ body {
 :root {
   color-scheme: light;
 }
+
+/* Korean page: Pretendard (loaded in ko/index.html) and word-level line breaking. */
+:lang(ko) .font-sans {
+  font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, "Apple SD Gothic Neo",
+    "Malgun Gothic", sans-serif;
+}
+
+:lang(ko) {
+  word-break: keep-all;
+  overflow-wrap: break-word;
+}
+
+/* Wide uppercase tracking reads well in Latin script but splits Hangul apart. */
+:lang(ko) .tracking-\[0\.2em\] {
+  letter-spacing: 0.05em;
+}

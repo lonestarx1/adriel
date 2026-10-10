@@ -1,3 +1,4 @@
+import { fileURLToPath } from "node:url";
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 
@@ -12,6 +13,11 @@ export default defineConfig({
     outDir: "dist",
     assetsDir: "assets",
     rollupOptions: {
+      // One HTML page per language: / (English) and /ko/ (Korean).
+      input: {
+        main: fileURLToPath(new URL("./index.html", import.meta.url)),
+        ko: fileURLToPath(new URL("./ko/index.html", import.meta.url))
+      },
       output: {
         assetFileNames: "assets/[name].[hash].[ext]",
         entryFileNames: "assets/[name].[hash].js",
@@ -20,5 +26,3 @@ export default defineConfig({
     }
   }
 });
-
-

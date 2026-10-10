@@ -4,24 +4,24 @@
 
 **Software Engineer (AI & Backend) -**  [engineeradriel.com](https://engineeradriel.com/)
 
-Seoul, South Korea · Open to US / Canada / Korea / Remote
+Seoul, South Korea · Open to roles in Korea & Canada
 
 ---
 
 ## **SUMMARY**
 
-Software Engineer specializing in **AI-powered backend systems and applied machine learning**, with 4+ years of experience building and scaling **production products** in media, video, and language technology. Core builder of **Slid, Summary, and Dipclip**, shipping end-to-end systems spanning **AI pipelines, backend APIs, frontend tools, and infrastructure**. Strong background in **RAG systems, speech & video AI, agent pipelines, and cloud-native deployment**, with growing focus on **security, Web3, and AI safety**.
+Software Engineer specializing in **AI-powered backend systems, cloud infrastructure, and applied machine learning**, with 5+ years of experience building and scaling **production products** in media, video, language technology, and on-chain trading. Core builder of **Slid, Summary, and Dipclip**, shipping end-to-end systems spanning **AI pipelines, backend APIs, frontend tools, and infrastructure**. In 2026, co-built **FillerBot**, a Rust UniswapX / 1inch Fusion solver live on Ethereum and BNB Chain that won **1st place at Protocol Camp Cohort 9 (Southeast Asia)**, and led the backend and infrastructure for **DollarParking**. Strong background in **RAG systems, speech & video AI, agent pipelines, and cloud-native deployment**, with growing focus on **security, Web3, and AI safety**. Started the **Georgia Tech OMSCS** (M.S. Computer Science) in Fall 2026.
 
 ---
 
 ## **CORE TECHNICAL SKILLS**
 
-- **Languages:** Python, TypeScript, JavaScript, Go, Rust
-- **Backend:** Django, FastAPI, Node.js, Nest Js, Gin
+- **Languages:** Python, TypeScript, JavaScript, Go, Rust, Solidity
+- **Backend:** Django, FastAPI, Node.js, Nest Js, Gin, Tokio / Axum
 - **AI / ML (Applied):** Langchain, Langgraph, Autogen, TTS, STT, LipSync, RAG, LLMs
-- **Infra:** AWS, GCP, Docker, Kubernetes, Terraform
+- **Infra:** AWS (EKS, RDS, Lambda), GCP, Docker, Kubernetes, Terraform, GitHub Actions, Grafana
 - **Datastores:** PostgreSQL, MySQL, Redis, Pinecone, MongoDB
-- **Web3:** Wallet Development
+- **Web3:** UniswapX, 1inch Fusion, Foundry, alloy / viem, Wallet Development, DeFi Risk Monitoring
 - **Media:** ffmpeg, audio/video processing pipelines
 
 ---
@@ -35,7 +35,35 @@ Sep 2022 – Present
 **Software Engineer (Intern → Full-time)**
 Dec 2020 – Aug 2022
 
-Lead engineer on **SaaS products: Slid, Summary, and Dipclip**, shipping production AI systems end to end, later expanding into **B2B media AI**, **client projects**, and **Web3 initiatives**.
+Lead engineer on **SaaS products: Slid, Summary, and Dipclip**, shipping production AI systems end to end, later expanding into **B2B media AI**, **client projects**, and **Web3 trading infrastructure**.
+
+---
+
+## **WEB3 TRADING INFRASTRUCTURE (2026)**
+
+### **FillerBot — UniswapX & 1inch Fusion Solver**
+
+**Co-builder (team of 2)** · Jun 2026 – Present · **1st Place, Protocol Camp Cohort 9 (Southeast Asia)**, run by Shard Lab (Hashed)
+
+- Co-built a **Rust solver** that prices and fills intent orders for **Ondo tokenized US equities**; **live on Ethereum mainnet since Jul 2026 and BNB Chain since Oct 2026**.
+- Built the **first version of the bot in two days**: order ingestion, Dutch-auction pricing, decision engine, shadow mode, Postgres audit log, and Grafana monitoring.
+- Measured burst submissions winning **30.8%** of races vs. **55.6%** when isolated, then designed **independent nonce lanes** across the contracts and bot.
+- Owned deployment: **GitHub Actions → AWS EKS / ECR**, Secrets Manager via IRSA, and a **us-east-1 BNB Chain host with ~4x lower fire latency** than Seoul.
+- Extended the **Solidity executor contracts** (GM-to-GM fills, inventory restocking, builder payments) and wrote the **pre-deploy security review**.
+
+**Tech:** Rust, Tokio, alloy, Solidity, Foundry, Go, Next.js, PostgreSQL, AWS EKS, Grafana
+
+### **DollarParking — Stablecoins to Tokenized US Stocks**
+
+**Backend & Infrastructure Lead** · Jun 2026 – Aug 2026 · Live on Google Play and [dollarparking.app](https://dollarparking.app)
+
+- Mobile and web app that converts **USDT/USDC into Ondo tokenized US stocks** through gasless UniswapX orders.
+- Architected the **Go/Gin backend**: UniswapX order relay, price worker, cached JSON-RPC proxy, order audit trail, and fill reconciler.
+- Led the pivot from an on-chain mint contract to a **contract-free, gasless swap flow** across contracts, API, and clients.
+- Built the shared **EKS / RDS platform in Terraform** (namespaces with quotas and NetworkPolicy, IRSA, GitHub OIDC deploy roles) that runs DollarParking and FillerBot as **isolated tenants**, with gated production deploys.
+- Hardened **price integrity** (server-set pricing, fail-closed stale-feed gate) and resolved launch security-review findings.
+
+**Tech:** Go, Gin, PostgreSQL, Redis, UniswapX, React Native (Expo), Next.js, AWS EKS, Terraform
 
 ---
 
@@ -159,7 +187,7 @@ Seoul, South Korea
 
 ---
 
-## **WEB3 & SECURITY (RECENT)**
+## **WEB3 & SECURITY**
 
 ### **Crypto Wallet & DeFi Risk Monitoring** *(Jan 2026 – Present)*
 
@@ -169,17 +197,20 @@ Seoul, South Korea
 
 ---
 
-## **OPEN SOURCE CONTRIBUTION**
+## **OPEN SOURCE, HACKATHONS & COMMUNITY**
 
-- **Tenuo** — AI agent security framework enforcing **task-scoped authority**
-    
-    [https://tenuo.dev/](https://tenuo.dev/)
-    
+- **GoGrid (G2)** — Creator & maintainer of a unified system for developing and orchestrating **production AI agents in Go**. [gogrid.vercel.app](https://gogrid.vercel.app/)
+- **Tenuo** — Contributor to an AI agent security framework enforcing **task-scoped authority**; added the **AutoGen AgentChat integration**. [tenuo.dev](https://tenuo.dev/)
+- **PowerPulse** *(Frontiers GenAI Hackathon, ALX Kigali, Jul 2026)* — Multilingual power-outage assistant (English / Kinyarwanda) grounded in the national utility's published outage records; the LLM only phrases verified context and never invents restoration times. [powerpulse-africa.vercel.app](https://powerpulse-africa.vercel.app/)
+- **GIOS Study** — Native macOS study app (Tauri 2) for Georgia Tech OMSCS CS-6200 with active recall and SM-2 spaced repetition. [GitHub](https://github.com/lonestarx1/gios-study-app)
+- **RCA-SK Website** — Built and maintain the website for the Rwandan Community Abroad in South Korea.
+
 
 ---
 
 ## **EDUCATION & CERTIFICATIONS**
 
+- **M.S. Computer Science (OMSCS)** — Georgia Institute of Technology (Fall 2026 – Present)
 - **BSc Bioengineering** — Yonsei University (Global Top #50, QS 2026) (2017-2022)
 - **AWS Solutions Architect – Associate**
 
@@ -194,7 +225,7 @@ Seoul, South Korea
 
 ## AWARDS
 
-National Science Grand Prize (Physics) · Korean Government Scholarship · Yonsei Academic Excellence · Korean Speech Contest Grand Prize · Slid Hero Award (Transparency) · Bebridge Hero Award (Focusing on Real Value)
+**1st Place, Protocol Camp Cohort 9 (Southeast Asia)** — Shard Lab by Hashed, with FillerBot (2026) · National Science Grand Prize (Physics) · Korean Government Scholarship · Yonsei Academic Excellence · Korean Speech Contest Grand Prize · Slid Hero Award (Transparency) · Bebridge Hero Award (Focusing on Real Value)
 
 ---
 
