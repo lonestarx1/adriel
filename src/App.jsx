@@ -11,6 +11,7 @@ import {
   Mail,
   MapPin,
   Menu,
+  Phone,
   Shield,
   Trophy,
   X,
@@ -21,6 +22,7 @@ import ko from './content/ko.js';
 const content = { en, ko };
 
 const EMAIL = 'siradriel@gmail.com';
+const PHONE = '+82-10-9998-7109';
 const LINKEDIN_URL = 'https://www.linkedin.com/in/adriel-niyodusaba-993a01120/';
 const RESUME_SHORT = '/docs/Adriel_resume_1pager.pdf';
 const RESUME_LONG = '/docs/Adriel_resume.pdf';
@@ -342,6 +344,12 @@ export default function App({ lang = 'en' }) {
               className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-white rounded-full text-sm font-medium hover:bg-primary/90 transition-colors"
             >
               <Mail size={16} /> {EMAIL}
+            </a>
+            <a
+              href={`tel:${PHONE.replace(/-/g, '')}`}
+              className="inline-flex items-center gap-2 px-6 py-3 border border-slate-300 rounded-full text-sm font-medium hover:border-primary hover:text-primary transition-colors"
+            >
+              <Phone size={16} /> {PHONE}
             </a>
             <a
               href={LINKEDIN_URL}
