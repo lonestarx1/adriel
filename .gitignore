@@ -137,3 +137,6 @@ dist
 # Vite logs files
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
+
+# Korean cover letter (자기소개서) - kept local, company-specific
+docs/ko/Adriel_cover_letter_ko.*
