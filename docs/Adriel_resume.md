@@ -163,7 +163,7 @@ Lead engineer on **SaaS products: Slid, Summary, and DipClip**, shipping product
 ## **EDUCATION & CERTIFICATIONS**
 
 - **M.S. Computer Science (OMSCS)** — Georgia Institute of Technology (Fall 2026 – Present)
-- **BSc Bioengineering** — Yonsei University (Global Top #50, QS 2026) (2017-2022)
+- **BSc Bioengineering** — Yonsei University (Global Top #50, QS 2026) (Mar 2017 – Aug 2022)
 - **AWS Solutions Architect – Associate**
 
 ---

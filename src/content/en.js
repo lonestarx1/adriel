@@ -278,7 +278,7 @@ const en = {
     {
       title: 'BSc Bioengineering',
       org: 'Yonsei University (Global Top #50, QS 2026)',
-      timeframe: '2017 - 2022',
+      timeframe: 'Mar 2017 - Aug 2022',
     },
     {
       title: 'AWS Solutions Architect - Associate',

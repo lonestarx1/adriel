@@ -278,7 +278,7 @@ const ko = {
     {
       title: '학사 (BSc Bioengineering)',
       org: '연세대학교 (QS 2026 세계 50위권)',
-      timeframe: '2017 - 2022',
+      timeframe: '2017.03 - 2022.08',
     },
     {
       title: 'AWS Certified Solutions Architect - Associate',
