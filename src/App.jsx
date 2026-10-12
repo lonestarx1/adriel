@@ -24,8 +24,6 @@ const content = { en, ko };
 const EMAIL = 'siradriel@gmail.com';
 const PHONE = '+82-10-9998-7109';
 const LINKEDIN_URL = 'https://www.linkedin.com/in/adriel-niyodusaba-993a01120/';
-const RESUME_SHORT = '/docs/Adriel_resume_1pager.pdf';
-const RESUME_LONG = '/docs/Adriel_resume.pdf';
 
 const NAV_SECTIONS = ['about', 'skills', 'experience', 'projects', 'education'];
 
@@ -121,7 +119,7 @@ export default function App({ lang = 'en' }) {
                   <Mail size={16} /> {t.hero.email}
                 </a>
                 <a
-                  href={RESUME_SHORT}
+                  href={t.hero.resumeShortHref}
                   target="_blank"
                   rel="noreferrer"
                   className="inline-flex items-center gap-2 px-5 py-2.5 border border-slate-300 rounded-full text-sm font-medium hover:border-primary hover:text-primary transition-colors"
@@ -129,7 +127,7 @@ export default function App({ lang = 'en' }) {
                   <FileText size={16} /> {t.hero.resumeShort}
                 </a>
                 <a
-                  href={RESUME_LONG}
+                  href={t.hero.resumeLongHref}
                   target="_blank"
                   rel="noreferrer"
                   className="inline-flex items-center gap-2 px-5 py-2.5 border border-slate-300 rounded-full text-sm font-medium hover:border-primary hover:text-primary transition-colors"
@@ -229,31 +227,17 @@ export default function App({ lang = 'en' }) {
               />
             ))}
           </div>
-          <div className="mt-6 grid gap-6 lg:grid-cols-3">
+          <div className="mt-6 grid gap-6 md:grid-cols-2">
             {t.products.map((product) => (
               <DetailCard
                 key={product.title}
                 title={product.title}
                 subtitle={`${product.role} · ${product.timeframe}`}
+                badge={product.badge}
+                link={product.link}
+                linkLabel={t.labels.visit}
                 bullets={product.bullets}
                 tags={product.stack}
-              />
-            ))}
-          </div>
-        </section>
-
-        <section id="projects" className="py-16 border-t border-slate-200">
-          <SectionHeader {...t.sections.projects} />
-          <div className="grid gap-6 lg:grid-cols-2">
-            {t.projects.map((project) => (
-              <DetailCard
-                key={project.title}
-                title={project.title}
-                subtitle={project.summary}
-                link={project.link}
-                linkLabel={t.labels.visit}
-                bullets={project.bullets}
-                tags={project.stack}
               />
             ))}
           </div>
@@ -273,6 +257,23 @@ export default function App({ lang = 'en' }) {
                   <ExternalLinkButton href={project.link} label={t.labels.visit} />
                 </div>
               </div>
+            ))}
+          </div>
+        </section>
+
+        <section id="projects" className="py-16 border-t border-slate-200">
+          <SectionHeader {...t.sections.projects} />
+          <div className="grid gap-6 lg:grid-cols-2">
+            {t.projects.map((project) => (
+              <DetailCard
+                key={project.title}
+                title={project.title}
+                subtitle={project.summary}
+                link={project.link}
+                linkLabel={t.labels.visit}
+                bullets={project.bullets}
+                tags={project.stack}
+              />
             ))}
           </div>
         </section>
@@ -362,7 +363,7 @@ export default function App({ lang = 'en' }) {
           </div>
           <div className="mt-8 text-sm text-muted flex items-center justify-center gap-3">
             <FileText size={14} />
-            <a href={RESUME_LONG} target="_blank" rel="noreferrer" className="hover:text-primary">
+            <a href={t.contact.downloadHref} target="_blank" rel="noreferrer" className="hover:text-primary">
               {t.contact.download}
             </a>
           </div>

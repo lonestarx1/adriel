@@ -2,10 +2,16 @@
 """
 Convert Markdown resume to PDF with preserved formatting.
 Supports both full multi-page and condensed 1-page formats.
+
+Usage:
+    python3 scripts/md_to_pdf.py               # render PDFs with WeasyPrint
+    python3 scripts/md_to_pdf.py --html-only DIR
+        # write standalone HTML (CSS inlined) to DIR instead, for printing
+        # with headless Chrome (see scripts/render_pdfs.sh)
 """
 
+import sys
 import markdown
-from weasyprint import HTML, CSS
 from pathlib import Path
 from shutil import copy2
 
@@ -212,6 +218,29 @@ CSS_ONE_PAGE = """
 """
 
 
+def md_to_html(input_path: str, one_page: bool = False) -> str:
+    """Convert a markdown resume to a standalone HTML document with inline CSS."""
+    with open(input_path, "r", encoding="utf-8") as f:
+        md_content = f.read()
+
+    html_content = markdown.markdown(
+        md_content, extensions=["extra", "sane_lists"]
+    )
+    css = CSS_ONE_PAGE if one_page else CSS_FULL
+
+    return f"""<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <style>{css}</style>
+</head>
+<body>
+    {html_content}
+</body>
+</html>
+"""
+
+
 def md_to_pdf(input_path: str, output_path: str, one_page: bool = False):
     """Convert a markdown file to PDF with resume-appropriate styling.
 
@@ -220,34 +249,10 @@ def md_to_pdf(input_path: str, output_path: str, one_page: bool = False):
         output_path: Path for the output PDF
         one_page: If True, use compact 1-page styling
     """
+    # Imported lazily so --html-only works without WeasyPrint's native deps.
+    from weasyprint import HTML
 
-    # Read the markdown content
-    with open(input_path, "r", encoding="utf-8") as f:
-        md_content = f.read()
-
-    # Convert markdown to HTML
-    html_content = markdown.markdown(
-        md_content, extensions=["extra", "sane_lists"]
-    )
-
-    # Select CSS based on format
-    css = CSS(string=CSS_ONE_PAGE if one_page else CSS_FULL)
-
-    # Wrap HTML content in a proper document
-    full_html = f"""
-    <!DOCTYPE html>
-    <html>
-    <head>
-        <meta charset="utf-8">
-    </head>
-    <body>
-        {html_content}
-    </body>
-    </html>
-    """
-
-    # Generate PDF
-    HTML(string=full_html).write_pdf(output_path, stylesheets=[css])
+    HTML(string=md_to_html(input_path, one_page)).write_pdf(output_path)
     print(f"PDF generated: {output_path}")
 
 
@@ -255,17 +260,24 @@ if __name__ == "__main__":
     # Paths
     script_dir = Path(__file__).parent
     project_root = script_dir.parent
+    docs_dir = project_root / "docs"
+    resumes = [
+        ("Adriel_resume", False),
+        ("Adriel_resume_1pager", True),
+    ]
+
+    if len(sys.argv) == 3 and sys.argv[1] == "--html-only":
+        out_dir = Path(sys.argv[2])
+        out_dir.mkdir(parents=True, exist_ok=True)
+        for name, one_page in resumes:
+            out = out_dir / f"{name}.html"
+            out.write_text(md_to_html(str(docs_dir / f"{name}.md"), one_page), encoding="utf-8")
+            print(f"HTML generated: {out}")
+        sys.exit(0)
+
     public_docs_dir = project_root / "public" / "docs"
     public_docs_dir.mkdir(parents=True, exist_ok=True)
-
-    # Generate full resume
-    input_file = project_root / "docs" / "Adriel_resume.md"
-    output_file = project_root / "docs" / "Adriel_resume.pdf"
-    md_to_pdf(str(input_file), str(output_file), one_page=False)
-    copy2(output_file, public_docs_dir / output_file.name)
-
-    # Generate 1-page resume
-    input_file_1p = project_root / "docs" / "Adriel_resume_1pager.md"
-    output_file_1p = project_root / "docs" / "Adriel_resume_1pager.pdf"
-    md_to_pdf(str(input_file_1p), str(output_file_1p), one_page=True)
-    copy2(output_file_1p, public_docs_dir / output_file_1p.name)
+    for name, one_page in resumes:
+        output_file = docs_dir / f"{name}.pdf"
+        md_to_pdf(str(docs_dir / f"{name}.md"), str(output_file), one_page=one_page)
+        copy2(output_file, public_docs_dir / output_file.name)

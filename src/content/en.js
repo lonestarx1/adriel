@@ -13,44 +13,46 @@ const en = {
   },
 
   hero: {
-    eyebrow: 'Software Engineer (AI & Backend)',
+    eyebrow: 'AI Engineer · Software Engineer',
     intro:
-      'I build production backend, AI, and infrastructure systems. Over 5+ years at Bebridge I led delivery for Slid, Summary, and DipClip, and in 2026 I moved into on-chain trading infrastructure: co-building FillerBot, a Rust solver live on Ethereum and BNB Chain that won 1st place at Protocol Camp Cohort 9 (Southeast Asia), and owning the backend for DollarParking, a stablecoin-to-tokenized-stocks mobile app.',
+      'I build production AI systems and the backends that run them. Over 5+ years at Bebridge I led engineering for Slid, Summary, and DipClip, and built Proteus, an AI dubbing agent that cut human dubbing time by ~90% and grew into more than half of company revenue. I also created GoGrid, an open-source framework for production AI agents in Go, and in 2026 co-built a low-latency Rust trading service that won 1st place at Protocol Camp Cohort 9.',
     focus:
-      'Strengths include distributed backend services, cloud-native infrastructure on AWS and Kubernetes, RAG and speech/video AI pipelines, and Web3 execution systems. I started the Georgia Tech OMSCS (M.S. Computer Science) program in Fall 2026.',
+      'Strengths include LLM applications and agents, RAG, speech and video AI pipelines, and the backend and cloud infrastructure (AWS, Kubernetes, Terraform) that keeps them reliable in production. I started the Georgia Tech OMSCS (M.S. Computer Science) program in Fall 2026.',
     location: 'Seoul, South Korea',
     availability: 'Open to roles in Korea & Canada',
     personal: '28 years old, Rwandan',
     email: 'Email',
     resumeShort: 'Resume (1 Page)',
-    resumeLong: 'Resume (5 Pages)',
+    resumeShortHref: '/docs/Adriel_resume_1pager.pdf',
+    resumeLong: 'Resume (Full)',
+    resumeLongHref: '/docs/Adriel_resume.pdf',
     linkedin: 'LinkedIn',
     photoAlt: 'Adriel Niyodusaba',
   },
 
   stats: [
     {
-      value: '5+ years',
-      label: 'Building production AI, backend, and infrastructure systems',
-    },
-    {
-      value: '1st Place',
-      label: 'Protocol Camp Cohort 9 (Southeast Asia) with FillerBot',
-    },
-    {
       value: '~90%',
-      label: 'Reduction in human dubbing time with Proteus',
+      label: 'Reduction in human dubbing time with the Proteus AI agent',
+    },
+    {
+      value: '>50%',
+      label: 'Of company revenue driven by Proteus, across 10+ B2B contracts',
     },
     {
       value: '10k+ users',
-      label: 'Scale supported on the Summary mobile app',
+      label: 'Served by the Summary AI video digest app',
+    },
+    {
+      value: '5+ years',
+      label: 'Shipping production AI, backend, and infrastructure systems',
     },
   ],
 
   sections: {
     skills: {
       title: 'Core Technical Skills',
-      description: 'A focused stack across backend, AI systems, Web3, and production infrastructure.',
+      description: 'Applied AI on top of solid backend and production infrastructure.',
     },
     experience: {
       title: 'Professional Experience',
@@ -58,15 +60,15 @@ const en = {
     },
     products: {
       title: 'Product Highlights',
-      description: 'Recent on-chain trading infrastructure, plus long-running leadership across Slid, Summary, and DipClip.',
+      description: 'AI products I led from prototype to production, plus recent backend and infrastructure work.',
     },
     projects: {
       title: 'Selected Projects & Clients',
-      description: 'B2B systems, client engagements, hackathons, and applied research deployments.',
+      description: 'Client AI engagements, RAG and search systems, and applied speech and video research.',
     },
     openSource: {
       title: 'Open Source',
-      description: 'Building production-grade AI infrastructure and safety tooling.',
+      description: 'Building production-grade AI agent infrastructure and safety tooling.',
     },
     education: {
       title: 'Education, Certifications, and Recognition',
@@ -76,16 +78,16 @@ const en = {
 
   skillGroups: [
     {
+      title: 'AI / ML (Applied)',
+      items: ['LLMs (OpenAI, Anthropic, Gemini)', 'LangGraph', 'LangChain', 'AutoGen', 'RAG', 'Whisper / STT', 'TTS & voice cloning', 'Lip sync'],
+    },
+    {
       title: 'Languages',
-      items: ['Python', 'TypeScript', 'JavaScript', 'Go', 'Rust', 'Solidity'],
+      items: ['Python', 'TypeScript', 'JavaScript', 'Go', 'Rust'],
     },
     {
       title: 'Backend',
-      items: ['Django', 'FastAPI', 'Node.js', 'NestJS', 'Gin', 'Tokio / Axum'],
-    },
-    {
-      title: 'AI / ML (Applied)',
-      items: ['LangChain', 'LangGraph', 'Autogen', 'RAG', 'TTS / STT', 'LLMs', 'Lip Sync'],
+      items: ['FastAPI', 'Django', 'Node.js', 'NestJS', 'Gin', 'Tokio / Axum'],
     },
     {
       title: 'Infra',
@@ -99,10 +101,6 @@ const en = {
       title: 'Media',
       items: ['ffmpeg', 'Audio/video processing pipelines'],
     },
-    {
-      title: 'Web3',
-      items: ['UniswapX', '1inch Fusion', 'Foundry', 'alloy / viem', 'Wallet development', 'DeFi risk monitoring'],
-    },
   ],
 
   experience: [
@@ -112,13 +110,12 @@ const en = {
       period: 'Sep 2022 - Present',
       location: 'Seoul / Global',
       highlights: [
-        'Co-built FillerBot, a Rust solver for UniswapX and 1inch Fusion orders, in a two-person team; live on Ethereum mainnet since Jul 2026 and BNB Chain since Oct 2026, and 1st place at Protocol Camp Cohort 9 (Southeast Asia), run by Hashed\'s Shard Lab.',
-        'Owned the Go API, AWS infrastructure, and CI/CD for DollarParking, a mobile app that turns USDT/USDC directly into tokenized US stocks (live on Google Play and the web).',
-        'Built the shared AWS EKS platform in Terraform that runs DollarParking and FillerBot as isolated tenants.',
-        'Lead engineer on SaaS products: Slid, Summary, and DipClip, shipping production AI systems end to end.',
-        'Owned backend and cloud infrastructure, enabling global performance improvements.',
-        'Designed recurring subscription payments to drive sustainable monetization.',
-        'Introduced Whisper-based transcription that became the Auto-Note foundation.',
+        'Built Proteus, an AI + human dubbing agent (transcription, translation, voice cloning, duration alignment) that cut human dubbing time by ~90% and drove over half of company revenue through 10+ B2B contracts.',
+        'Lead engineer on SaaS products: Slid, Summary, and DipClip, shipping production LLM and speech/video AI pipelines end to end.',
+        'Introduced Whisper-based transcription that became the foundation of Slid\'s Auto-Note feature.',
+        'Delivered client AI systems: RAG chatbot, semantic course search, and Korean TTS and lip-sync deployments on GPU servers.',
+        'Owned backend and cloud infrastructure, and designed recurring subscription payments.',
+        'In 2026, co-built FillerBot, a low-latency Rust trading service (1st place, Protocol Camp Cohort 9), and led the Go backend and multi-tenant AWS EKS platform (Terraform) for the DollarParking app.',
         'Onboarded and mentored new hires and interns, helping them ramp quickly and contribute to production systems.',
       ],
     },
@@ -138,62 +135,45 @@ const en = {
 
   featuredProducts: [
     {
-      title: 'FillerBot - UniswapX & 1inch Fusion Solver',
-      role: 'Co-builder (team of 2)',
-      timeframe: 'Jun 2026 - Present',
-      badge: '1st Place · Protocol Camp Cohort 9 (Southeast Asia)',
+      title: 'Proteus - AI + Human Dubbing Agent',
+      role: 'Lead AI Engineer',
+      timeframe: 'B2B media AI',
       bullets: [
-        'Prices and fills intent orders for Ondo tokenized US equities; live on Ethereum mainnet and BNB Chain.',
-        'Built the first version of the bot in two days: order ingestion, Dutch-auction pricing, decision engine, shadow mode, Postgres audit log, and Grafana.',
-        'Measured burst submissions winning 30.8% of races vs. 55.6% when isolated, then designed independent nonce lanes across the contracts and bot.',
-        'Owned deployment: GitHub Actions to AWS EKS, Secrets Manager via IRSA, and a us-east-1 BNB Chain host with ~4x lower fire latency than Seoul.',
-        'Extended the Solidity executor contracts (GM-to-GM fills, inventory restocking, builder payments) and wrote the pre-deploy security review.',
+        'Agentic pipeline: video ingestion, transcription, LLM translation with web-assisted validation, voice cloning, and dubbed audio generation.',
+        'Iterative alignment so translated speech matches the original audio duration, a hard constraint for dubbing.',
+        'Cut human dubbing time by ~90%; editors moved from creating dubs to validating them.',
+        'Became a core revenue driver: over half of company revenue and 10+ B2B contracts, including long-term clients.',
       ],
-      stack: ['Rust', 'Tokio', 'alloy', 'Solidity', 'Foundry', 'Go', 'PostgreSQL', 'AWS EKS', 'Grafana'],
+      stack: ['Python', 'LangGraph', 'OpenAI', 'Gemini', 'ElevenLabs', 'ffmpeg'],
     },
-    {
-      title: 'DollarParking - Stablecoins to Tokenized US Stocks',
-      role: 'Backend & Infrastructure Lead',
-      timeframe: 'Jun 2026 - Aug 2026',
-      link: 'https://dollarparking.app',
-      bullets: [
-        'Mobile and web app that converts USDT/USDC into Ondo tokenized US stocks through gasless UniswapX orders; live on Google Play and the web.',
-        'Architected the Go/Gin backend: UniswapX order relay, price worker, cached JSON-RPC proxy, order audit trail, and fill reconciler.',
-        'Led the pivot from an on-chain mint contract to a contract-free, gasless swap flow across contracts, API, and clients.',
-        'Provisioned EKS and RDS with Terraform and shipped GitHub Actions OIDC deploys with gated production approvals.',
-        'Hardened price integrity (server-set pricing, fail-closed stale-feed gate) and resolved launch security-review findings.',
-      ],
-      stack: ['Go', 'Gin', 'PostgreSQL', 'Redis', 'UniswapX', 'React Native (Expo)', 'Next.js', 'AWS EKS', 'Terraform'],
-    },
-  ],
-
-  products: [
     {
       title: 'Slid - AI-Powered Note-Taking for Online Learning',
       role: 'Lead Software Engineer',
       timeframe: 'Dec 2020 - Present',
       bullets: [
-        'Rebuilt the Chrome extension UI and shipped a macOS/Windows desktop app with code signing.',
-        'Desktop app adoption grew to roughly 50% of active users.',
-        'Owned backend infrastructure and global deployments to reduce international latency.',
-        'Implemented recurring subscriptions and introduced Whisper-based Auto-Note.',
+        'Joined as one of the first two engineers and grew into the lead engineer owning core product systems.',
+        'Introduced Whisper-based transcription at an internal hackathon; it became the foundation of the Auto-Note feature.',
+        'Shipped the macOS/Windows desktop app with code signing; it grew to ~50% of active users.',
+        'Owned backend and global cloud infrastructure, and implemented recurring subscriptions.',
       ],
-      stack: ['TypeScript', 'React', 'Electron', 'Python', 'FastAPI', 'PostgreSQL', 'AWS'],
+      stack: ['Python', 'FastAPI', 'Whisper', 'TypeScript', 'React', 'Electron', 'PostgreSQL', 'AWS'],
     },
+  ],
+
+  products: [
     {
       title: 'Summary - AI Video Digest Mobile App',
       role: 'Lead Backend Engineer',
       timeframe: '2022 - 2024',
       bullets: [
-        'Built and owned the backend and AI pipeline for summarizing new YouTube uploads.',
+        'Built the AI pipeline: ingestion, transcription, LLM summarization, storage, and user notification for new YouTube uploads.',
         'Designed channel pooling and ingestion for thousands of subscribed channels.',
-        'Delivered scalable services supporting around 10,000 users.',
-        'Balanced latency, cost, and quality in production AI workflows.',
+        'Served around 10,000 users while balancing latency, cost, and quality.',
       ],
-      stack: ['TypeScript', 'NestJS', 'Python', 'FastAPI', 'MongoDB', 'PostgreSQL', 'AWS Lambda'],
+      stack: ['Python', 'FastAPI', 'Whisper', 'GPT-4o', 'NestJS', 'MongoDB', 'AWS Lambda'],
     },
     {
-      title: 'DipClip - Short-Form Video Generation',
+      title: 'DipClip - AI Short-Form Video Generation',
       role: 'Lead Backend / AI Engineer',
       timeframe: '2023 - 2024',
       bullets: [
@@ -201,40 +181,52 @@ const en = {
         'Designed algorithms to identify key moments and generate precise time-range annotations.',
         'Led backend development for a B2C app serving approximately 5,000 users.',
       ],
-      stack: ['TypeScript', 'React Native', 'Python', 'FastAPI', 'PostgreSQL', 'AWS Lambda'],
+      stack: ['Python', 'FastAPI', 'Whisper', 'GPT-4o', 'PostgreSQL', 'AWS Lambda'],
+    },
+    {
+      title: 'FillerBot - Low-Latency Trading Service',
+      role: 'Co-builder (team of 2)',
+      timeframe: 'Jun 2026 - Present',
+      badge: '1st Place · Protocol Camp Cohort 9 (Southeast Asia)',
+      bullets: [
+        'Rust/Tokio service that prices and fills tokenized-equity orders in real time; in production on two networks.',
+        'Built the first version in two days: ingestion, pricing, decision engine, shadow mode, Postgres audit log, and Grafana.',
+        'Measured contention between concurrent submissions and redesigned for independent submission lanes; moved hosting to cut latency ~4x.',
+      ],
+      stack: ['Rust', 'Tokio', 'Go', 'PostgreSQL', 'AWS EKS', 'Grafana'],
+    },
+    {
+      title: 'DollarParking - Mobile Investing App',
+      role: 'Backend & Infrastructure Lead',
+      timeframe: 'Jun 2026 - Aug 2026',
+      link: 'https://dollarparking.app',
+      bullets: [
+        'Architected the Go/Gin backend: order relay, price worker, cached RPC proxy, audit trail, and fill reconciler.',
+        'Built the shared multi-tenant AWS EKS / RDS platform in Terraform with GitHub Actions OIDC deploys and gated production approvals.',
+        'Hardened price integrity with server-set pricing and a fail-closed stale-feed gate.',
+      ],
+      stack: ['Go', 'Gin', 'PostgreSQL', 'Redis', 'AWS EKS', 'Terraform'],
     },
   ],
 
   projects: [
     {
-      title: 'PowerPulse - Multilingual Power-Outage Assistant',
-      summary: 'Built at the Frontiers GenAI Hackathon (ALX Kigali, Jul 2026) with a team of six.',
-      link: 'https://powerpulse-africa.vercel.app/',
-      bullets: [
-        'Answers outage questions typed in English, Kinyarwanda, or a code-switched mix, grounded in Rwanda Energy Group\'s published outage records.',
-        'Code resolves the place, outage window, and history; the LLM only phrases and personalizes verified context, so it never invents restoration times.',
-        'Scored on a deterministic 33-question benchmark that includes out-of-scope questions it must decline.',
-      ],
-      stack: ['Next.js', 'TypeScript', 'Gemini', 'Vercel AI SDK'],
-    },
-    {
-      title: 'Proteus - AI + Human Dubbing Agent',
-      summary: 'End-to-end pipeline for multilingual dubbing with human validation.',
-      bullets: [
-        'Built transcription, translation, and voice cloning workflows with duration alignment.',
-        'Reduced human dubbing time by roughly 90%.',
-        'System became a core revenue driver with 10+ B2B contracts.',
-      ],
-      stack: ['ffmpeg', 'ElevenLabs', 'OpenAI', 'Gemini', 'LangGraph'],
-    },
-    {
       title: 'AI-Powered Dubbing Studio',
-      summary: 'Web-based studio for human editors to review and finalize dubbing output.',
+      summary: 'Web-based studio for human editors to review and finalize Proteus output.',
       bullets: [
         'Integrated Proteus outputs for seamless playback, correction, and approvals.',
         'Bridged AI systems with human-in-the-loop workflows.',
       ],
-      stack: ['Web app', 'Playback tooling', 'Review UX'],
+      stack: ['Human-in-the-loop', 'Playback tooling', 'Review UX'],
+    },
+    {
+      title: '3Pro Investor Advisor - Financial AI Chatbot',
+      summary: 'RAG chatbot answering investor questions from YouTube expert interviews.',
+      bullets: [
+        'Automated ingestion, transcription, embedding, and vector storage.',
+        'Retrieval prioritizes fresh content; responses cite source video links and timestamps.',
+      ],
+      stack: ['RAG', 'Vector DB', 'Whisper', 'YouTube ingestion'],
     },
     {
       title: 'KOHI - Course Knowledge Graph & Semantic Search',
@@ -243,41 +235,22 @@ const en = {
         'Built multi-level graph visualization for thousands of courses.',
         'Processed course data and embedded it into Pinecone for semantic search.',
       ],
-      stack: ['Visualization', 'Pinecone', 'FastAPI'],
-    },
-    {
-      title: '3Pro Investor Advisor - Financial AI Chatbot',
-      summary: 'RAG chatbot answering investor questions from YouTube expert interviews.',
-      bullets: [
-        'Automated ingestion, transcription, embedding, and vector storage.',
-        'Responses include source video links and timestamps for transparency.',
-      ],
-      stack: ['RAG', 'Vector DB', 'YouTube ingestion'],
+      stack: ['Embeddings', 'Pinecone', 'FastAPI', 'Visualization'],
     },
     {
       title: 'Korean TTS Model Research & Deployment',
       summary: 'Benchmarked open-source TTS models and deployed GPU inference servers.',
       bullets: [
-        'Evaluated GPT-SoVITS, XTTS-v2, MeloTTS, Fish Audio, and others.',
-        'Delivered a production-ready TTS server recommendation.',
+        'Evaluated GPT-SoVITS, XTTS-v2, MeloTTS, Fish Audio, and others on quality and latency.',
+        'Delivered a production-ready TTS server recommendation and deployment.',
       ],
-      stack: ['GPU deployment', 'TTS', 'Benchmarking'],
+      stack: ['GPU inference', 'TTS', 'Benchmarking'],
     },
     {
       title: 'Korean Lip-Sync AI Systems',
       summary: 'Research and deployment of MuseTalk and LatentSync for Korean lip-sync.',
       bullets: ['Optimized models for client-specific latency and quality targets.'],
       stack: ['MuseTalk', 'LatentSync', 'Model tuning'],
-    },
-    {
-      title: 'Crypto Wallet & DeFi Risk Monitoring',
-      summary: 'Security systems for DeFi and wallet safety.',
-      bullets: [
-        'Designed wallet security mechanisms and gas optimization workflows.',
-        'Built real-time monitoring for Aave and Compound health metrics.',
-        'Authored a fund-rescue smart contract (testing phase).',
-      ],
-      stack: ['Web3', 'Security', 'Monitoring'],
     },
   ],
 
@@ -329,7 +302,7 @@ const en = {
   languages: [
     { name: 'English', level: 'Fluent' },
     { name: 'Kinyarwanda', level: 'Native' },
-    { name: 'Korean', level: 'Advanced' },
+    { name: 'Korean', level: 'Advanced (TOPIK 5)' },
     { name: 'French', level: 'Intermediate' },
   ],
 
@@ -344,9 +317,10 @@ const en = {
 
   contact: {
     title: "Let's build something durable.",
-    body: 'I am looking for backend, infrastructure, and AI engineering roles in Korea and Canada, where I can own production systems end to end and deliver measurable business impact.',
+    body: 'I am looking for AI engineering and software engineering roles in Korea and Canada, where I can own production systems end to end and deliver measurable business impact.',
     linkedin: 'Connect on LinkedIn',
     download: 'Download resume (PDF)',
+    downloadHref: '/docs/Adriel_resume.pdf',
   },
 
   footer: {

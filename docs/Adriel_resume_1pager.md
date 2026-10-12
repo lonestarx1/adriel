@@ -1,21 +1,21 @@
 # **Adriel Niyodusaba**
 
-[engineeradriel.com](https://engineeradriel.com/) · siradriel@gmail.com · Seoul, South Korea · Open to roles in Korea & Canada
+**AI Engineer / Software Engineer** · [engineeradriel.com](https://engineeradriel.com/) · siradriel@gmail.com · Seoul, South Korea · Open to roles in Korea & Canada
 
 ---
 
 ## **SUMMARY**
 
-Software Engineer with 5+ years building **production AI, backend, and infrastructure systems**. Core engineer on products serving **50,000+ users**. Built AI pipelines that **reduced human dubbing time by 90%** and generated **over half of company revenue**. In 2026, co-built **FillerBot**, a Rust solver live on Ethereum and BNB Chain that won **1st place at Protocol Camp Cohort 9 (Southeast Asia)**. Georgia Tech OMSCS student.
+AI and Software Engineer with 5+ years building **production AI systems and the backends that run them**. Built **Proteus**, an AI dubbing agent that **cut human dubbing time by ~90%** and generated **over half of company revenue**. Core engineer on AI products serving **50,000+ users**. Creator of **GoGrid**, an open-source Go framework for production AI agents. Georgia Tech OMSCS student.
 
 ---
 
 ## **TECHNICAL SKILLS**
 
-**Languages:** Python, TypeScript, JavaScript, Go, Rust, Solidity | **Backend:** Django, FastAPI, Node.js, NestJS, Gin, Axum  
-**AI/ML:** LangChain, LangGraph, Autogen, RAG, LLMs, TTS/STT, LipSync | **Media:** ffmpeg, audio/video pipelines  
+**AI/ML:** LLMs (OpenAI, Anthropic, Gemini), LangGraph, LangChain, AutoGen, RAG, Whisper/STT, TTS & voice cloning, LipSync  
+**Languages:** Python, TypeScript, JavaScript, Go, Rust | **Backend:** FastAPI, Django, Node.js, NestJS, Gin, Axum  
 **Infra:** AWS (EKS, RDS, Lambda), GCP, Docker, Kubernetes, Terraform, GitHub Actions | **Data:** PostgreSQL, MongoDB, Redis, Pinecone  
-**Web3:** UniswapX, 1inch Fusion, Foundry, alloy/viem, wallet development, DeFi risk monitoring
+**Media:** ffmpeg, audio/video processing pipelines
 
 ---
 
@@ -23,37 +23,36 @@ Software Engineer with 5+ years building **production AI, backend, and infrastru
 
 **Software Engineer — AI & Backend** | Bebridge · Seoul | Dec 2020 – Present
 
-*Lead engineer on Slid, Summary, and DipClip; expanded into B2B media AI, client projects, and Web3 trading infrastructure.*
+*Lead engineer on Slid, Summary, and DipClip; expanded into B2B media AI, client AI projects, and backend/infra for new products.*
 
-**FillerBot — UniswapX & 1inch Fusion Solver** *(Co-builder, team of 2 · 2026)* · **1st Place, Protocol Camp Cohort 9 (SEA)**
+**Proteus — AI + Human Dubbing Agent** *(Lead AI Engineer)*
 
-- Co-built a **Rust solver** filling intent orders for Ondo tokenized US equities; **live on Ethereum mainnet and BNB Chain**
-- Built the first version in **two days**: ingestion, Dutch-auction pricing, decision engine, shadow mode, audit log
-- Owned **CI/CD to AWS EKS** and a us-east-1 host with **~4x lower fire latency**; extended the Solidity executor contracts
-
-**DollarParking — Stablecoins to Tokenized US Stocks** *(Backend & Infra Lead · 2026)* · Live on Google Play
-
-- Architected the **Go/Gin backend** (UniswapX order relay, price worker, RPC proxy, audit trail) and the **Terraform EKS/RDS platform** shared with FillerBot
+- Agentic pipeline: transcription → LLM translation with web validation → voice cloning → **duration-matched** dubbed audio
+- **Cut human dubbing time ~90%**; became **>50% of company revenue** across **10+ B2B contracts**
 
 **Slid — AI Note-Taking Platform** *(Lead Engineer)*
 
-- One of the **first two engineers**; built the **desktop app (macOS/Windows)**, reaching **~50% of active users**
-- Owned **backend and global cloud infra**; designed **recurring subscriptions**; introduced **Whisper** Auto-Note
+- One of the **first two engineers**; introduced **Whisper** transcription that became the **Auto-Note** feature
+- Built the **desktop app (macOS/Windows)**, reaching **~50% of active users**; owned **backend, global cloud infra**, and **subscriptions**
 
-**Summary — AI Video Digest App** *(Lead Backend Engineer)* · Backend and AI pipeline delivering YouTube summaries to **~10,000 users**, with channel pooling across **thousands of channels**
+**Summary — AI Video Digest App** *(Lead Backend Engineer)* · Ingestion → transcription → LLM summarization pipeline for **~10,000 users**, with channel pooling across **thousands of channels**
 
-**DipClip — AI Short-Form Video** *(Lead Backend/AI Engineer)* · AI pipeline turning long videos into short clips (**~5,000 users**)
+**DipClip — AI Short-Form Video** *(Lead Backend/AI Engineer)* · AI pipeline finding key moments to turn long videos into short clips (**~5,000 users**)
 
-**Proteus — AI Dubbing Agent** *(Lead AI Engineer)* · Transcription → translation → voice cloning → duration-matched output; **cut human dubbing time ~90%**, **>50% of company revenue**, **10+ B2B contracts**
+**FillerBot — Low-Latency Trading Service** *(Co-builder, team of 2 · 2026)* · **1st Place, Protocol Camp Cohort 9 (SEA)**
+
+- **Rust/Tokio** service pricing and filling orders in real time, in production on two networks; first version built in **two days**
+- Owned **CI/CD to AWS EKS**; redesigned for independent submission lanes and cut latency **~4x**
+
+**DollarParking — Mobile Investing App** *(Backend & Infra Lead · 2026)* · **Go/Gin backend** and a **multi-tenant Terraform EKS/RDS platform**; live on Google Play
 
 ---
 
 ## **SELECTED PROJECTS & OPEN SOURCE**
 
-**KOHI** · Course knowledge graph + Pinecone semantic search · **3Pro Investor Advisor** · RAG chatbot over expert YouTube interviews  
-**Korean TTS & Lip-Sync** *(2025)* · Benchmarked and deployed GPT-SoVITS, XTTS-v2, MeloTTS, MuseTalk, and LatentSync  
 **GoGrid (G2)** · Creator, Go system for production AI agents · **Tenuo** · Contributor, AutoGen AgentChat integration  
-**PowerPulse** *(GenAI Hackathon, Kigali, 2026)* · English/Kinyarwanda power-outage assistant grounded in utility records
+**3Pro Investor Advisor** · RAG chatbot over expert YouTube interviews · **KOHI** · Course knowledge graph + Pinecone semantic search  
+**Korean TTS & Lip-Sync** *(2025)* · Benchmarked and deployed GPT-SoVITS, XTTS-v2, MeloTTS, MuseTalk, and LatentSync on GPU
 
 ---
 
@@ -67,4 +66,4 @@ Software Engineer with 5+ years building **production AI, backend, and infrastru
 ## **AWARDS & ADDITIONAL**
 
 **1st Place, Protocol Camp Cohort 9 (SEA)**, Shard Lab by Hashed · National Science Grand Prize (Physics) · Korean Government Scholarship · Yonsei Academic Excellence · Korean Speech Contest Grand Prize · Slid & Bebridge Hero Awards  
-**CES 2023 Presenter** · **Silicon Valley Immersion** (Dec 2025) · **Languages:** English (Fluent) · Korean (Advanced) · Kinyarwanda (Native) · French (Intermediate)
+**CES 2023 Presenter** · **Silicon Valley Immersion** (Dec 2025) · **Languages:** English (Fluent) · Korean (Advanced, TOPIK 5) · Kinyarwanda (Native) · French (Intermediate)
