@@ -65,5 +65,5 @@ AI and Software Engineer with 5+ years building **production AI systems and the 
 
 ## **AWARDS & ADDITIONAL**
 
-**1st Place, Protocol Camp Cohort 9 (SEA)**, Shard Lab by Hashed · National Science Grand Prize (Physics) · Korean Government Scholarship · Yonsei Academic Excellence · Korean Speech Contest Grand Prize · Slid & Bebridge Hero Awards  
+**1st Place, Protocol Camp Cohort 9 (SEA)**, Shard Lab by Hashed · National Science Grand Prize, Physics (2014) · Korean Government Scholarship · Yonsei Academic Excellence · Korean Speech Contest Grand Prize (2016) · Slid & Bebridge Hero Awards  
 **CES 2023 Presenter** · **Silicon Valley Immersion** (Dec 2025) · **Languages:** English (Fluent) · Korean (Advanced, TOPIK 5) · Kinyarwanda (Native) · French (Intermediate)

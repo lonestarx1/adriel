@@ -289,10 +289,10 @@ const en = {
 
   awards: [
     '1st Place, Protocol Camp Cohort 9 (Southeast Asia), Shard Lab by Hashed, with FillerBot (2026)',
-    'National Science Grand Prize (Physics)',
+    'National Science Grand Prize, Physics (KOICA & Rwanda Ministry of Education, 2014)',
     'Korean Government Scholarship',
     'Yonsei Academic Excellence',
-    'Korean Speech Contest Grand Prize',
+    'Korean Speech Contest Grand Prize (Silla University, 2016)',
     'Slid Hero Award (Transparency)',
     'Bebridge Hero Award (Focusing on Real Value)',
   ],
